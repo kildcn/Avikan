@@ -127,7 +127,15 @@ GEM
       ruby2_keywords
     error_highlight (0.5.1)
     erubi (1.12.0)
+    event_stream_parser (1.0.0)
     execjs (2.9.1)
+    faraday (2.7.12)
+      base64
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (3.0.2)
     ffi (1.16.3)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
@@ -159,6 +167,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
+    multipart-post (2.3.0)
     mutex_m (0.2.0)
     net-imap (0.4.6)
       date
@@ -232,6 +241,10 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.6)
+    ruby-openai (6.3.0)
+      event_stream_parser (>= 0.3.0, < 2.0.0)
+      faraday (>= 1)
+      faraday-multipart (>= 1)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sassc (2.4.0)
@@ -301,6 +314,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.2)
+  ruby-openai
   sassc-rails
   selenium-webdriver
   simple_form!
