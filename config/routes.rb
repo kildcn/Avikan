@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get '/bird/show', to: 'birds#show'
   get '/bird/index', to: 'birds#index'
   get '/pages/map', to: 'pages#map'
+  get '/pages/badges', to: 'pages#badges'
+  get '/pages/leaderboard', to: 'pages#leaderboard'
 
   resources :captures, only:[:new, :create, :first, :second, :success]
 
