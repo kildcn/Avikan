@@ -30,7 +30,21 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_114938) do
     t.string "rarity"
     t.string "sound_url"
     t.integer "weight"
-    t.string "photo"
+    t.string "
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "captures", force: :cascade do |t|
+    t.integer "bird_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "captures", force: :cascade do |t|
+    t.integer "bird_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
