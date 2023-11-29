@@ -16,10 +16,16 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root to: "pages#home"
+# config/routes.rb
 
+ # get "show", to: "birds#show"
+ # get "index", to: "birds#index"
 
-  resources :captures, only:[:new, :create, :first, :second, :success]
-
+  get '/bird/show', to: 'birds#show'
+  get '/bird/index', to: 'birds#index'
+  get '/pages/map', to: 'pages#map'
+  get '/pages/badges', to: 'pages#badges'
+  get '/pages/leaderboard', to: 'pages#leaderboard'
 
   resources :pages, only:[:badges, :leaderboard, :map]
 
