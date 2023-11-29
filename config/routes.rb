@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   get '/bird/show', to: 'birds#show'
   get '/bird/index', to: 'birds#index'
+  get '/pages/map', to: 'pages#map'
 
   resources :captures, only:[:new, :create, :first, :second, :success]
 
