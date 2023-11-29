@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   get "new", to: "captures#new"
 
+  # Sending image to DB
+  post '/upload_image', to: 'captures#new'
+
+
   # Defines the root path route ("/")
   # root "posts#index"
   root to: "pages#home"
@@ -22,8 +26,6 @@ Rails.application.routes.draw do
   get '/pages/map', to: 'pages#map'
   get '/pages/badges', to: 'pages#badges'
   get '/pages/leaderboard', to: 'pages#leaderboard'
-
-  resources :captures, only:[:new, :create, :first, :second, :success]
 
   resources :pages, only:[:badges, :leaderboard, :map]
 
