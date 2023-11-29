@@ -6,4 +6,10 @@ class PagesController < ApplicationController
 
   def map
   end
+
+  def badges
+  end
+
+  def leaderboard
+  end
 end
