@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   
-  resources :captures, only:[:new, :create, :first, :second, :success]
+  resources :captures, only:[:show, :new, :create, :first, :second, :success]
   
 
   resources :pages, only:[:badges, :leaderboard, :map]

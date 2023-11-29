@@ -141,6 +141,9 @@ GEM
       sassc (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.3)
@@ -167,6 +170,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
+    multi_xml (0.6.0)
     multipart-post (2.3.0)
     mutex_m (0.2.0)
     net-imap (0.4.6)
@@ -292,8 +296,6 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    wikipedia-client (1.17.0)
-      addressable (~> 2.7)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.12)
@@ -315,6 +317,7 @@ DEPENDENCIES
   dotenv-rails
   error_highlight (>= 0.4.0)
   font-awesome-sass (~> 6.1)
+  httparty
   importmap-rails
   jbuilder
   pg (~> 1.1)
@@ -329,7 +332,6 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
-  wikipedia-client
 
 RUBY VERSION
    ruby 3.1.2p20
