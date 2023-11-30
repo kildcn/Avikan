@@ -18,7 +18,14 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # config/routes.rb
 
-  resources :captures, only:[:show, :new, :create, :first, :second, :success]
+  # get "show", to: "birds#show"
+  # get "index", to: "birds#index"
+
+  resources :captures, only:[:show, :new, :create] do
+    member do 
+      get :first
+    end
+  end
 
   get '/birds/index', to: 'birds#index'
   get '/birds/:id', to: 'birds#show'
@@ -26,6 +33,7 @@ Rails.application.routes.draw do
   get '/pages/badges', to: 'pages#badges'
   get '/pages/leaderboard', to: 'pages#leaderboard'
   get 'spots', to: 'spots#index'
+
 
   resources :pages, only:[:badges, :leaderboard, :map]
 
