@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   get "new", to: "captures#new"
 
+  # Sending image to DB
+  post '/upload_image', to: 'captures#new'
+
+
   # Defines the root path route ("/")
   # root "posts#index"
   root to: "pages#home"
@@ -17,13 +21,13 @@ Rails.application.routes.draw do
  # get "show", to: "birds#show"
  # get "index", to: "birds#index"
 
-  get '/bird/show', to: 'birds#show'
-  get '/bird/index', to: 'birds#index'
+  resources :captures, only:[:show, :new, :create, :first, :second, :success]
+
+  get '/birds/index', to: 'birds#index'
+  get '/birds/:id', to: 'birds#show'
   get '/pages/map', to: 'pages#map'
   get '/pages/badges', to: 'pages#badges'
   get '/pages/leaderboard', to: 'pages#leaderboard'
-
-  resources :captures, only:[:new, :create, :first, :second, :success]
 
   resources :pages, only:[:badges, :leaderboard, :map]
 

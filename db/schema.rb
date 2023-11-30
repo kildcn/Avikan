@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.1].define(version: 2023_11_29_112206) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "captures", force: :cascade do |t|
-    t.integer "bird_id"
-    t.integer "user_id"
-=======
-ActiveRecord::Schema[7.1].define(version: 2023_11_29_114938) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_30_120436) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,7 +31,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_114938) do
     t.string "sound_url"
     t.integer "weight"
     t.string "photo"
->>>>>>> c89360d81e460e5c79005e4fb5147c5c06e5426f
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,6 +53,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_114938) do
     t.string "username"
     t.date "date_joined"
     t.string "avatar_url"
+    t.integer "user_xp"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -7,7 +7,8 @@ User.create!(
   email: 'rebecca@test.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/rebeccabri"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/rebeccabri",
+  user_xp: 1100
 )
 
 User.create!(
@@ -15,7 +16,8 @@ User.create!(
   email: 'alberto@example.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/agalara"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/agalara",
+  user_xp: 1250
 )
 
 User.create!(
@@ -23,7 +25,8 @@ User.create!(
   email: 'killian@example.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/kildcn"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/kildcn",
+  user_xp: 1200
 )
 
 User.create!(
@@ -31,7 +34,8 @@ User.create!(
   email: 'maksym@test.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/habidulin"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/habidulin",
+  user_xp: 1010
 )
 
 User.create!(
@@ -39,7 +43,8 @@ User.create!(
   email: 'emma@test.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/emmvs"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/emmvs",
+  user_xp: 700
 )
 
 User.create!(
@@ -47,7 +52,8 @@ User.create!(
   email: 'adam@test.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 600
 )
 
 puts "Created #{User.count} Users 🤷🏽 🙋🏻‍♀️ 💃🏼 👨🏼‍🌾"
@@ -81,7 +87,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/european_robin.mp3",
   weight: 18,
-  photo: "https://example.com/photos/european_robin.jpg"
+  photo: "https://live.staticflickr.com/65535/51751617609_160d3e2d70_b.jpg"
 )
 
 Bird.create(
@@ -100,7 +106,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/common_blackbird.mp3",
   weight: 100,
-  photo: "https://example.com/photos/common_blackbird.jpg"
+  photo: "https://live.staticflickr.com/1650/25997991936_d8c11ace84_b.jpg"
 )
 
 Bird.create(
@@ -119,7 +125,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/great_tit.mp3",
   weight: 20,
-  photo: "https://example.com/photos/great_tit.jpg"
+  photo: "https://live.staticflickr.com/1728/42451388662_1bf7cebe9d_b.jpg"
 )
 
 Bird.create(
@@ -138,7 +144,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/barn_swallow.mp3",
   weight: 19,
-  photo: "https://example.com/photos/barn_swallow.jpg"
+  photo: "https://live.staticflickr.com/65535/53020276508_547913a1da_b.jpg"
 )
 
 Bird.create(
@@ -157,7 +163,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/eurasian_blue_tit.mp3",
   weight: 11,
-  photo: "https://example.com/photos/eurasian_blue_tit.jpg"
+  photo: "https://live.staticflickr.com/65535/51953209067_089e4d01b1_b.jpg"
 )
 
 Bird.create(
@@ -176,7 +182,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/eurasian_nuthatch.mp3",
   weight: 23,
-  photo: "https://example.com/photos/eurasian_nuthatch.jpg"
+  photo: "https://live.staticflickr.com/65535/52529335601_60ab29d647_b.jpg"
 )
 
 Bird.create(
@@ -195,7 +201,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/common_chaffinch.mp3",
   weight: 28,
-  photo: "https://example.com/photos/common_chaffinch.jpg"
+  photo: "https://live.staticflickr.com/2076/2345292562_a3cf676ce0_o.jpg"
 )
 
 Bird.create(
@@ -214,7 +220,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/common_wood_pigeon.mp3",
   weight: 500,
-  photo: "https://example.com/photos/common_wood_pigeon.jpg"
+  photo: "https://live.staticflickr.com/65535/49808416606_cf775e8ed3_b.jpg"
 )
 
 Bird.create(
@@ -233,7 +239,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/european_goldfinch.mp3",
   weight: 14,
-  photo: "https://example.com/photos/european_goldfinch.jpg"
+  photo: "https://live.staticflickr.com/65535/51852766425_a6f4813c62_b.jpg"
 )
 
 Bird.create(
@@ -252,7 +258,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/eurasian_magpie.mp3",
   weight: 200,
-  photo: "https://example.com/photos/eurasian_magpie.jpg"
+  photo: "https://live.staticflickr.com/1908/44243436974_bf6df05936_b.jpg"
 )
 
 puts "Bird seeds created: #{Bird.count} 🐣"

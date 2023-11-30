@@ -1,1 +1,26 @@
-<h1>HERE ARE ALL OUR BIRDS</h1>
+<h1>All Birds</h1>
+
+<ul>
+  <% @birds.each do |bird| %>
+    <li>
+      <h2><%= bird.common_name %> (<%= bird.scientific_name %>)</h2>
+      <p><strong>Description:</strong> <%= bird.description %></p>
+      <p><strong>Habitat:</strong> <%= bird.habitat %></p>
+      <p><strong>Conservation Status:</strong> <%= bird.conservation_status %></p>
+      <p><strong>Migrates:</strong> <%= bird.migrates ? 'Yes' : 'No' %></p>
+      <p><strong>Experience Points:</strong> <%= bird.experience_points %></p>
+      <p><strong>Common Location:</strong> <%= bird.common_location %></p>
+      <p><strong>Habitat Type:</strong> <%= bird.bird_habitat_type %></p>
+      <p><strong>Size:</strong> <%= bird.bird_size %></p>
+      <p><strong>Diet:</strong> <%= bird.diet %></p>
+      <p><strong>Max Velocity:</strong> <%= bird.max_velocity %> km/h</p>
+      <p><strong>Rarity:</strong> <%= bird.rarity %></p>
+      <p><strong>Weight:</strong> <%= bird.weight %> grams</p>
+      <p><img src="<%= bird.photo %>" alt="<%= bird.common_name %>" /></p>
+      <audio controls>
+        <source src="<%= bird.sound_url %>" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </li>
+  <% end %>
+</ul>
