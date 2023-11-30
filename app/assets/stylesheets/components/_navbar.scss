@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(0, 0, 0);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,16 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-lewagon {
+  color: #FFFFFF; // Sets the default text color for the whole navbar to white
+
+  .nav-link, .dropdown-item {
+    color: #FFFFFF; // Ensures that the text color for nav links and dropdown items is white
+  }
+
+  .navbar-toggler-icon {
+    // Custom styles for the navbar toggler icon if needed
+  }
 }

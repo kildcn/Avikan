@@ -7,7 +7,6 @@ class CapturesController < ApplicationController
     @captures = Capture.all
   end
 
-
   def new
     # creates a new instance of the a capture
     @new_capture = Capture.new
@@ -18,17 +17,15 @@ class CapturesController < ApplicationController
     endpoint = "http://164.68.99.217:8000/upload_image"
 
     response =  HTTParty.post(endpoint, body: {
-        img:  File.open(@image),
-        type: 'image/png'
-      },
-      headers: {
-        accept: "application/json"
-      }
-    )
+      img:  File.open(@image),
+      type: 'image/png'
+    },
+    headers: {
+      accept: "application/json"
+    })
+
     bird_hash = JSON.parse(response.body)
-
   end
-
 
     # call the API
 

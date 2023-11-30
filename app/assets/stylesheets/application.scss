@@ -10,3 +10,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-color: #000000; // Sets the background color of the body to black
+
+  h1, h2, h3 {
+    color: #FCCA49; // Sets the color of H1, H2, and H3 headings to a gold-like color
+  }
+
+  ul, li, p {
+    color: #FFFFFF; // Sets the color of unordered lists, list items, and paragraphs to white
+  }
+}
