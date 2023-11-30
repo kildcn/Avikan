@@ -7,7 +7,6 @@ class CapturesController < ApplicationController
     @captures = Capture.all
   end
 
-
   def new
     # creates a new instance of the a capture
     @new_capture = Capture.new
@@ -23,12 +22,10 @@ class CapturesController < ApplicationController
     },
     headers: {
       accept: "application/json"
-    }
-  )
+    })
+
     bird_hash = JSON.parse(response.body)
-
   end
-
 
     # call the API
 
@@ -42,7 +39,7 @@ class CapturesController < ApplicationController
 
     # If it's not there create the the bird with the info we get
 
-    # Save the bird 
+    # Save the bird
 
     # Go to the waiting screen 1
 
