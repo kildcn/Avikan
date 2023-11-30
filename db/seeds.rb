@@ -6,52 +6,64 @@ User.create!(
   username: 'Rebecca',
   email: 'rebecca@test.com',
   password: '123456',
+  group_id: 1,
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/rebeccabri"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/rebeccabri",
+  user_xp: 1500
 )
 
 User.create!(
   username: 'Alberto',
   email: 'alberto@example.com',
   password: '123456',
+  group_id: 1,
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/agalara"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/agalara",
+  user_xp: 1200
 )
 
 User.create!(
   username: 'Killian',
   email: 'killian@example.com',
   password: '123456',
+  group_id: 1,
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/kildcn"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/kildcn",
+  user_xp: 900
 )
 
 User.create!(
   username: 'Maksym',
   email: 'maksym@test.com',
   password: '123456',
+  group_id: 1,
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/habidulin"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/habidulin",
+  user_xp: 750
 )
 
 User.create!(
   username: 'Emma',
   email: 'emma@test.com',
   password: '123456',
+  group_id: 1,
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/emmvs"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/emmvs",
+  user_xp: 1300
 )
 
 User.create!(
   username: 'Adam',
   email: 'adam@test.com',
   password: '123456',
+  group_id: 1,
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 1700
 )
 
 puts "Created #{User.count} Users 🤷🏽 🙋🏻‍♀️ 💃🏼 👨🏼‍🌾"
-
+puts "Created #{User.count} Users with Different total_xp Values 🌟"
 puts "Seeds successfully created! 🌱"
 
 Bird.destroy_all

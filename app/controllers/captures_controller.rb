@@ -18,13 +18,13 @@ class CapturesController < ApplicationController
     endpoint = "http://164.68.99.217:8000/upload_image"
 
     response =  HTTParty.post(endpoint, body: {
-      img:  File.open(@image),
-      type: 'image/png'
-    },
-    headers: {
-      accept: "application/json"
-    }
-  )
+        img:  File.open(@image),
+        type: 'image/png'
+      },
+      headers: {
+        accept: "application/json"
+      }
+    )
     bird_hash = JSON.parse(response.body)
 
   end
@@ -32,16 +32,16 @@ class CapturesController < ApplicationController
 
     # call the API
 
-    # Parse the API answer 
+    # Parse the API answer
 
     # Show error if it's not found
 
-    # If the bird is found by the API, check if is already in 
+    # If the bird is found by the API, check if is already in
     # our birds table
 
     # If it's not there create the the bird with the info we get
 
-    # Save the bird 
+    # Save the bird
 
     # Go to the waiting screen 1
 

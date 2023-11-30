@@ -11,5 +11,6 @@ class PagesController < ApplicationController
   end
 
   def leaderboard
+      @global_top_3 = User.order(user_xp: :desc).limit(3)
   end
 end

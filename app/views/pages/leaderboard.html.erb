@@ -1,1 +1,9 @@
-<h1>This is the leaderboard</h1>
+<h1>Global Top 3 Leaderboard</h1>
+
+<div class="leaderboard-container">
+  <ol>
+    <% @global_top_3.each_with_index do |user, index| %>
+    <li><%= user.username %> - <%= user.user_xp %> XP</li>
+    <% end %>
+  </ol>
+</div>
