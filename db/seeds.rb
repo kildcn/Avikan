@@ -7,7 +7,8 @@ User.create!(
   email: 'rebecca@test.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/rebeccabri"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/rebeccabri",
+  user_xp: 1100
 )
 
 User.create!(
@@ -15,7 +16,8 @@ User.create!(
   email: 'alberto@example.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/agalara"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/agalara",
+  user_xp: 1250
 )
 
 User.create!(
@@ -23,7 +25,8 @@ User.create!(
   email: 'killian@example.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/kildcn"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/kildcn",
+  user_xp: 1200
 )
 
 User.create!(
@@ -31,7 +34,8 @@ User.create!(
   email: 'maksym@test.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/habidulin"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/habidulin",
+  user_xp: 1010
 )
 
 User.create!(
@@ -39,7 +43,8 @@ User.create!(
   email: 'emma@test.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/emmvs"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/emmvs",
+  user_xp: 700
 )
 
 User.create!(
@@ -47,7 +52,8 @@ User.create!(
   email: 'adam@test.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 600
 )
 
 puts "Created #{User.count} Users 🤷🏽 🙋🏻‍♀️ 💃🏼 👨🏼‍🌾"
