@@ -3,5 +3,13 @@ class PagesController < ApplicationController
 
   def home
   end
-end
 
+  def map
+  end
+
+  def badges
+  end
+
+  def leaderboard
+  end
+end
