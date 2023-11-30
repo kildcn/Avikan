@@ -18,26 +18,34 @@ class CapturesController < ApplicationController
       type: 'image/png'
       },
       headers: {
-        accept: "application/json",
+        accept: "application/json"
       }
     )
     @bird_hash = JSON.parse(response.body)
-  end
 
-  def image_params
-    params.require(:bird).permit(:photo)
-  end
+    if @bird_hash.bird_detected
+      if Bird.where(@bird_hash.first_likely_bird_species, @scientific_name)
+        # if this is true, the bird is already in our Birds table and we
+        # Only create a capture
+        @new_capture = Capture.new ()
+      else
+        # we create a new bird in the bird table
+        @new_bird = Bird.new()
+      end
 
-
-  # Faltaria por crear la clase bird_picture
-  # class Bird < ApplicationRecord
-  #   has_one_attached :photo
-  # end
+    else
+      # Show error if it's not found
   
+    end
 
-    # call the API
 
-    # Parse the API answer 
+
+  end
+
+  # def image_params
+  #   params.require(:capture).permit(:photo)
+  # end
+
 
     # Show error if it's not found
 
