@@ -1,1 +1,22 @@
-<h1>Here is one bird</h1>
+<div class="bird-info">
+  <h1><%= @bird.common_name %></h1>
+  <img src="<%= @bird.photo %>" alt="<%= @bird.common_name %>">
+
+  <p><strong>Scientific Name:</strong> <%= @bird.scientific_name %></p>
+  <p><strong>Description:</strong> <%= @bird.description %></p>
+  <p><strong>Habitat:</strong> <%= @bird.habitat %></p>
+  <p><strong>Conservation Status:</strong> <%= @bird.conservation_status %></p>
+  <p><strong>Migrates:</strong> <%= @bird.migrates ? 'Yes' : 'No' %></p>
+  <p><strong>Experience Points:</strong> <%= @bird.experience_points %></p>
+  <p><strong>Common Location:</strong> <%= @bird.common_location %></p>
+  <p><strong>Habitat Type:</strong> <%= @bird.bird_habitat_type %></p>
+  <p><strong>Size:</strong> <%= @bird.bird_size %></p>
+  <p><strong>Diet:</strong> <%= @bird.diet %></p>
+  <p><strong>Max Velocity:</strong> <%= @bird.max_velocity %> km/h</p>
+  <p><strong>Rarity:</strong> <%= @bird.rarity %></p>
+  <p><strong>Weight:</strong> <%= @bird.weight %> grams</p>
+  <audio controls>
+    <source src="<%= @bird.sound_url %>" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>

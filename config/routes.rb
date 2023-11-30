@@ -21,10 +21,13 @@ Rails.application.routes.draw do
   # get "show", to: "birds#show"
   # get "index", to: "birds#index"
 
+ # get "show", to: "birds#show"
+ # get "index", to: "birds#index"
+
   resources :captures, only:[:show, :new, :create, :first, :second, :success]
 
-  get '/birds/:id', to: 'birds#show'
   get '/birds/index', to: 'birds#index'
+  get '/birds/:id', to: 'birds#show'
   get '/pages/map', to: 'pages#map'
   get '/pages/badges', to: 'pages#badges'
   get '/pages/leaderboard', to: 'pages#leaderboard'
