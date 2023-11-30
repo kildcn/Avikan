@@ -37,11 +37,12 @@ class CapturesController < ApplicationController
     # Show error if it's not found
 
     # If the bird is found by the API, check if is already in
+
     # our birds table
 
     # If it's not there create the the bird with the info we get
 
-    # Save the bird
+    # Save the bird 
 
     # Go to the waiting screen 1
 

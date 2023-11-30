@@ -11,9 +11,6 @@ class PagesController < ApplicationController
   end
 
   def leaderboard
-    # User.all.order_by(:username)
-    # User.all.order(:username)
-    # User.all.order(:username).first(2)
 
     @top_users = User.order(user_xp: :desc).limit(3)
   end
