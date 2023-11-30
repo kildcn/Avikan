@@ -7,7 +7,8 @@ User.create!(
   email: 'rebecca@test.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/rebeccabri"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/rebeccabri",
+  user_xp: 1100
 )
 
 User.create!(
@@ -15,7 +16,8 @@ User.create!(
   email: 'alberto@example.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/agalara"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/agalara",
+  user_xp: 1250
 )
 
 User.create!(
@@ -23,7 +25,8 @@ User.create!(
   email: 'killian@example.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/kildcn"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/kildcn",
+  user_xp: 1200
 )
 
 User.create!(
@@ -31,7 +34,8 @@ User.create!(
   email: 'maksym@test.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/habidulin"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/habidulin",
+  user_xp: 1010
 )
 
 User.create!(
@@ -39,7 +43,8 @@ User.create!(
   email: 'emma@test.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/emmvs"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/emmvs",
+  user_xp: 700
 )
 
 User.create!(
@@ -47,7 +52,8 @@ User.create!(
   email: 'adam@test.com',
   password: '123456',
   date_joined: Date.today,
-  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk"
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 600
 )
 
 puts "Created #{User.count} Users 🤷🏽 🙋🏻‍♀️ 💃🏼 👨🏼‍🌾"
@@ -256,3 +262,109 @@ Bird.create(
 )
 
 puts "Bird seeds created: #{Bird.count} 🐣"
+
+# spots
+
+puts "Generating bird spots 🧭"
+
+Spot.create!(
+  bird_id: 1, # European Robin
+  user_id: 1, # Rebecca
+  address: "Brandenburg Gate, Pariser Platz, Berlin",
+  latitude: 52.5162746,
+  longitude: 13.3777041,
+  likes: 12,
+  dislikes: 2
+)
+
+Spot.create!(
+  bird_id: 3, # Great Tit
+  user_id: 2, # Alberto
+  address: "Cologne Cathedral, Domkloster, Cologne",
+  latitude: 50.9412784,
+  longitude: 6.9582814,
+  likes: 15,
+  dislikes: 3
+)
+
+Spot.create!(
+  bird_id: 5, # Eurasian Blue Tit
+  user_id: 3, # Killian
+  address: "Neuschwanstein Castle, Neuschwansteinstraße, Schwangau",
+  latitude: 47.557574,
+  longitude: 10.749800,
+  likes: 20,
+  dislikes: 1
+)
+
+Spot.create!(
+  bird_id: 2, # Common Blackbird
+  user_id: 4, # Maksym
+  address: "Marienplatz, Munich",
+  latitude: 48.1371079,
+  longitude: 11.5753822,
+  likes: 18,
+  dislikes: 4
+)
+
+Spot.create!(
+  bird_id: 4, # Barn Swallow
+  user_id: 5, # Emma
+  address: "Reichstag Building, Platz der Republik, Berlin",
+  latitude: 52.5186232,
+  longitude: 13.376198,
+  likes: 22,
+  dislikes: 2
+)
+
+Spot.create!(
+  bird_id: 6, # Eurasian Nuthatch
+  user_id: 6, # Adam
+  address: "Miniatur Wunderland, Kehrwieder, Hamburg",
+  latitude: 53.5437641,
+  longitude: 9.988228,
+  likes: 10,
+  dislikes: 5
+)
+
+Spot.create!(
+  bird_id: 7, # Common Chaffinch
+  user_id: 1, # Rebecca
+  address: "Dresden Frauenkirche, Neumarkt, Dresden",
+  latitude: 51.0518092,
+  longitude: 13.7416595,
+  likes: 14,
+  dislikes: 3
+)
+
+Spot.create!(
+  bird_id: 8, # Common Wood Pigeon
+  user_id: 3, # Killian
+  address: "Heidelberg Castle, Schlosshof, Heidelberg",
+  latitude: 49.4106196,
+  longitude: 8.7153097,
+  likes: 17,
+  dislikes: 4
+)
+
+Spot.create!(
+  bird_id: 9, # European Goldfinch
+  user_id: 2, # Alberto
+  address: "Zugspitze, Garmisch-Partenkirchen",
+  latitude: 47.421066,
+  longitude: 10.985365,
+  likes: 25,
+  dislikes: 1
+)
+
+Spot.create!(
+  bird_id: 10, # Eurasian Magpie
+  user_id: 4, # Maksym
+  address: "Sanssouci Palace, Maulbeerallee, Potsdam",
+  latitude: 52.4044196,
+  longitude: 13.0365741,
+  likes: 19,
+  dislikes: 2
+)
+
+"#{Spot.count} bird spots created! 📍🌍"
