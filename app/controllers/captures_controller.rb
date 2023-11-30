@@ -32,11 +32,12 @@ class CapturesController < ApplicationController
 
     # call the API
 
-    # Parse the API answer 
+    # Parse the API answer
 
     # Show error if it's not found
 
-    # If the bird is found by the API, check if is already in 
+    # If the bird is found by the API, check if is already in
+
     # our birds table
 
     # If it's not there create the the bird with the info we get
