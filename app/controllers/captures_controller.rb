@@ -26,16 +26,16 @@ class CapturesController < ApplicationController
     #.transform_keys{ |key| key.to_sym }
     if @bird_hash["bird_detected"]
 
-      bird_scientific_name = @bird_hash["first_likely_bird_species"]["scientific_name"] 
-      @bird_from_db = Bird.find_by(scientific_name: bird_scientific_name)
+      @bird_scientific_name = @bird_hash["first_likely_bird_species"]["scientific_name"] 
+      @bird_from_db = Bird.find_by(scientific_name: @bird_scientific_name)
       
       unless @bird_from_db.nil?
         puts "bird is in our db"
-        raise
         # If this is true, the bird is already in our Birds table and we
         # only create a capture
         create_capture(@bird_hash)
         @new_capture.save
+        redirect_to capture_path(@new_capture)
       else
         puts "bird has  be created"
 
@@ -44,15 +44,11 @@ class CapturesController < ApplicationController
         # we create a new bird in the bird table
         create_bird(@bird_hash)
         @new_bird.save
-
         # we create a new capture
-        create_capture(@bird_hash)
+        create_capture(@new_bird)
         @new_capture.save
-
-        redirect_to capture_path(@new_capture)
-
-        # this needs to go to the analaizyng page :first?
-        # we need to create a route for this with 
+        # this needs to go to the analysing page :first?
+        redirect_to first_capture_path(@new_capture)
       end
     else
       # Show error if it's not found
@@ -66,7 +62,7 @@ class CapturesController < ApplicationController
   def create_bird(bird)
         @new_bird = Bird.new(
           common_name: @bird_hash["first_likely_bird_species"]["common_name"],
-          scientific_name: bird_scientific_name,
+          scientific_name: @bird_scientific_name,
           description:@bird_hash["first_likely_bird_species"]["description"],
           habitat:@bird_hash["first_likely_bird_species"]["habitat"],
           conservation_status:@bird_hash["first_likely_bird_species"]["conservation_status"],
@@ -104,4 +100,7 @@ class CapturesController < ApplicationController
     # Go to the waiting screen 2
 
     # Go to the success screen
+    def first_capture
+
+    end
 end

@@ -21,8 +21,8 @@ Rails.application.routes.draw do
   # get "show", to: "birds#show"
   # get "index", to: "birds#index"
 
- # get "show", to: "birds#show"
- # get "index", to: "birds#index"
+  # get "show", to: "birds#show"
+  # get "index", to: "birds#index"
 
   resources :captures, only:[:show, :new, :create] do
     member do 
