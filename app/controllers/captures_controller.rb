@@ -1,12 +1,8 @@
 class CapturesController < ApplicationController
 
-  require "net/http"
-  require "uri"
-
   def show
     @captures = Capture.all
   end
-
 
   def new
     # creates a new instance of the a capture
@@ -20,15 +16,24 @@ class CapturesController < ApplicationController
     response =  HTTParty.post(endpoint, body: {
       img:  File.open(@image),
       type: 'image/png'
-    },
-    headers: {
-      accept: "application/json"
-    }
-  )
-    bird_hash = JSON.parse(response.body)
-
+      },
+      headers: {
+        accept: "application/json",
+      }
+    )
+    @bird_hash = JSON.parse(response.body)
   end
 
+  def image_params
+    params.require(:bird).permit(:photo)
+  end
+
+
+  # Faltaria por crear la clase bird_picture
+  # class Bird < ApplicationRecord
+  #   has_one_attached :photo
+  # end
+  
 
     # call the API
 
