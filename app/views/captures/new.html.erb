@@ -6,3 +6,10 @@
   <%= f.input :image, as: :file %>
   <%= f.button :submit %>
 <% end %>
+
+
+<p>Uploaded image</p>
+<%# <%= cl_image_tag @new_capture.photo, height: 300, width: 400, crop: :fill %>
+
+<%# <p>Here comes the bird hash</p>
+<%= @bird_hash.first_likely_bird_species  %>
