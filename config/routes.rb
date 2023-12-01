@@ -24,10 +24,11 @@ Rails.application.routes.draw do
   get '/birds/:id', to: 'birds#show'
   get '/pages/map', to: 'pages#map'
   get '/pages/badges', to: 'pages#badges'
+  get '/pages/badges/:id', to: 'pages#badges', as: "badges"
   get '/pages/leaderboard', to: 'pages#leaderboard'
   get 'spots', to: 'spots#index'
 
-  resources :pages, only:[:badges, :leaderboard, :map]
+  resources :pages, only: [:leaderboard, :map]
 
   resources :users, only:[:search] do
     resources :pages, only:[:stats]
