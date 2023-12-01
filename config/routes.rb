@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   # Sending image to DB
   post '/upload_image', to: 'captures#new'
 
-
   # Defines the root path route ("/")
   # root "posts#index"
   root to: "pages#home"

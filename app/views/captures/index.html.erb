@@ -1,5 +1,5 @@
 <h1>You captured those birds!</h1>
 
-<%= @captures.each do |bird| %>
-<%= bird.common_name %>
+<%= @captures.each do |capture| %>
+<%= capture.bird.common_name %>
 <% end %>

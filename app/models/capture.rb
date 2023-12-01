@@ -1,3 +1,5 @@
+require "open-uri"
+
 class Capture < ApplicationRecord
   has_one_attached :photo
 
