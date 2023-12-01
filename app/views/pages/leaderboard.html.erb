@@ -1,4 +1,4 @@
-<h1>Global Top 3 Leaderboard</h1>
+<h1>Global Leaderboard</h1>
 
 
 <div class="leaderboard-container">
@@ -8,14 +8,3 @@
     <% end %>
   </ol>
 </div>
-
-<h2>Global leaderboard</h2>
-
-<ul>
-  <% @top_users.each do |user| %>
-    <%= link_to badges_path(user.id) do %>
-      <li><%= user.username %> - <%= user.user_xp %> XP</li>
-    <% end %>
-  <% end %>
-</ul>
-

@@ -1,8 +1,21 @@
 <h1>Welcome to Avikan 🐥</h1>
-<p></p>
 
-<%= link_to 'New Capture', new_capture_path, class: 'btn btn-secondary' %>
-<%= link_to 'My Flock', captures_path, class: 'btn btn-secondary' %>
-<%= link_to 'View Spots', spots_path, class: 'btn btn-secondary' %>
-<%= link_to 'Leaderboard', pages_leaderboard_path, class: 'btn btn-secondary' %>
-<%= link_to 'Badges', pages_badges_path, class: 'btn btn-secondary' %>
+<div class="pic container d-flex justify-content-center m-3">
+  <%= link_to new_capture_path do %>
+  <%= image_tag "camera.png" %>
+  <% end %>
+
+  <%= link_to captures_path do %>
+  <%= image_tag "flock.png" %>
+  <% end %>
+</div>
+
+<div class="pic container d-flex justify-content-center m-3">
+  <%= link_to spots_path do %>
+  <%= image_tag "pin.png" %>
+  <% end %>
+
+  <%= link_to pages_leaderboard_path do %>
+  <%= image_tag "trophy.png" %>
+  <% end %>
+</div>
