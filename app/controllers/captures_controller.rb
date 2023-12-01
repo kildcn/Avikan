@@ -1,6 +1,6 @@
 class CapturesController < ApplicationController
 
-   def index
+  def index
     if params[:query]
       @captures = Capture.global_capture_bird_search(params[:query]).where(user: current_user)
     else
@@ -39,14 +39,13 @@ class CapturesController < ApplicationController
       @bird_from_db = Bird.find_by(scientific_name: @bird_scientific_name)
 
       unless @bird_from_db.nil?
-        puts "bird is in our db"
         # The bird is in Birds table
         create_capture(@bird_hash)
         @new_capture.save
         redirect_to first_capture_path(@new_capture)
       else
-        puts "bird has  be created"
-        create_bird(@bird_hash)
+        # The bird is not in the birds table
+        @new_bird = create_bird(@bird_hash)
         file = URI.open(@image)
         @new_bird.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
         @new_bird.save
@@ -63,16 +62,15 @@ class CapturesController < ApplicationController
   def first
     @capture = Capture.find(params[:id])
     @captured_bird = @capture.bird
-    
   end
-  
+
   def search
     @captures = Capture.search(params[:keyword])
     render :index
   end
-end
 
   def create_bird(bird)
+    return Bird.new(
       common_name: @bird_hash["first_likely_bird_species"]["common_name"] || ["barkpecker","quail-plover"," Andean tit-spinetail"].sample,
       scientific_name: @bird_scientific_name || ["daphoenositta chrysoptera","ortyxelos meiffrenii","leptasthenura andicola"].sample,
       description:@bird_hash["first_likely_bird_species"]["description"] || ["this bird is amazing","this bird flies, sometimes","It can sing! Pips!"].sample,
@@ -87,9 +85,8 @@ end
       max_velocity:@bird_hash["first_likely_bird_species"]["max_velocity"] || rand(10..100),
       rarity:@bird_hash["first_likely_bird_species"]["rarity"] || rand(1..5),
       sound_url:@bird_hash["first_likely_bird_species"]["sound_url"] || "bird_singing.mp3",
-      weight:@bird_hash["first_likely_bird_species"]["weight"] || rand(0..10),
+      weight:@bird_hash["first_likely_bird_species"]["weight"] || rand(0..10)
     )
-
   end
 
   def create_capture(bird)
