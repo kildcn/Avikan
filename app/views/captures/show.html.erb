@@ -1,5 +1,3 @@
 <h1>You captured this bird!</h1>
 
-<%= @captures.each do |bird| %>
-<%= bird.common_name %>
-<% end %>
+<%= cl_image_tag @new_capture.photo.key, height: 300, width: 400, crop: :fill %>
