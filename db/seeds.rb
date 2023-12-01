@@ -368,3 +368,80 @@ Spot.create!(
 )
 
 "#{Spot.count} bird spots created! 📍🌍"
+
+# create captures
+
+Capture.create!(
+  bird_id: 10, # Eurasian Magpie
+  user_id: 4 # Maksym
+)
+
+Capture.create!(
+  bird_id: 9, # European Goldfinch
+  user_id: 2
+)
+
+Capture.create!(
+  bird_id: 8, # Common Wood Pigeon
+  user_id: 3 # Killian
+)
+
+Capture.create!(
+  bird_id: 7, # Common Chaffinch
+  user_id: 1 # Rebecca
+)
+
+Capture.create!(
+  bird_id: 6, # Eurasian Nuthatch
+  user_id: 6 # Adam
+)
+
+Capture.create!(
+  bird_id: 4, # Barn Swallow
+  user_id: 5 # Emma
+)
+
+Capture.create!(
+  bird_id: 2, # Common Blackbird
+  user_id: 4 # Maksym
+)
+
+Capture.create!(
+  bird_id: 2, # Common Blackbird
+  user_id: 4 # Maksym
+)
+
+Capture.create!(
+  bird_id: 5, # Eurasian Blue Tit
+  user_id: 3 # Killian
+)
+
+Capture.create!(
+  bird_id: 3, # Great Tit
+  user_id: 2 # Alberto
+)
+
+Capture.create!(
+  bird_id: 10,
+  user_id: 3
+)
+
+Capture.create!(
+  bird_id: 9,
+  user_id: 3
+)
+
+Capture.create!(
+  bird_id: 8,
+  user_id: 3
+)
+
+Capture.create!(
+  bird_id: 7,
+  user_id: 3
+)
+
+Capture.create!(
+  bird_id: 6,
+  user_id: 3
+)
