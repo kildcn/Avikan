@@ -81,5 +81,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-  # Geocoder
-  gem "geocoder"
+# Geocoder
+gem "geocoder"
+gem "pg_search"
