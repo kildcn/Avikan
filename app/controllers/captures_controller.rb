@@ -1,7 +1,11 @@
 class CapturesController < ApplicationController
 
-  def index
-    @captures = Capture.all
+   def index
+    if params[:query]
+      @captures = Capture.global_capture_bird_search(params[:query]).where(user: current_user)
+    else
+      @captures = Capture.where(user: current_user)
+    end
   end
 
   def show
@@ -16,20 +20,22 @@ class CapturesController < ApplicationController
     @image = params[:capture][:image]
     endpoint = "http://164.68.99.217:8000/upload_image"
 
-    response =  HTTParty.post(endpoint, body: {
-      img:  File.open(@image),
-      type: 'image/png'
+    response = HTTParty.post(
+      endpoint,
+      body: {
+        img:  File.open(@image),
+        type: 'image/png'
       },
       headers: {
         accept: "application/json"
-      }
-    )
 
+      })
+    # Saving the response in a hash and transforming the keys to symbols
     @bird_hash = JSON.parse(response.body)
 
     if @bird_hash["bird_detected"]
 
-      @bird_scientific_name = @bird_hash["first_likely_bird_species"]["scientific_name"] 
+      @bird_scientific_name = @bird_hash["first_likely_bird_species"]["scientific_name"]
       @bird_from_db = Bird.find_by(scientific_name: @bird_scientific_name)
 
       unless @bird_from_db.nil?
@@ -56,8 +62,13 @@ class CapturesController < ApplicationController
     end
   end
 
+  def search
+    @captures = Capture.search(params[:keyword])
+    render :index
+  end
+end
+
   def create_bird(bird)
-    @new_bird = Bird.new(
       common_name: @bird_hash["first_likely_bird_species"]["common_name"] || ["barkpecker","quail-plover"," Andean tit-spinetail"].sample,
       scientific_name: @bird_scientific_name || ["daphoenositta chrysoptera","ortyxelos meiffrenii","leptasthenura andicola"].sample,
       description:@bird_hash["first_likely_bird_species"]["description"] || ["this bird is amazing","this bird flies, sometimes","It can sing! Pips!"].sample,
@@ -74,12 +85,13 @@ class CapturesController < ApplicationController
       sound_url:@bird_hash["first_likely_bird_species"]["sound_url"] || "bird_singing.mp3",
       weight:@bird_hash["first_likely_bird_species"]["weight"] || 0..10.sample ,
     )
+
   end
 
   def create_capture(bird)
-      @new_capture = Capture.new
-      @new_capture.bird_id = bird.id
-      @new_capture.user_id = current_user.id
+    @new_capture = Capture.new
+    @new_capture.bird_id = bird.id
+    @new_capture.user_id = current_user.id
   end
   
   def reward
