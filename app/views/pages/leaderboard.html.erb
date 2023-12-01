@@ -13,7 +13,7 @@
 
 <ul>
   <% @top_users.each do |user| %>
-    <%= link_to badges_path(user.id) do %>
+    <%= link_to user_badges_path(user.id) do %>
       <li><%= user.username %> - <%= user.user_xp %> XP</li>
     <% end %>
   <% end %>
