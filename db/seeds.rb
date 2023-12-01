@@ -367,9 +367,11 @@ Spot.create!(
   dislikes: 2
 )
 
-"#{Spot.count} bird spots created! 📍🌍"
+puts "#{Spot.count} bird spots created! 📍🌍"
 
 # create captures
+
+puts "Creating captures 📸"
 
 Capture.create!(
   bird_id: 10, # Eurasian Magpie
@@ -445,3 +447,5 @@ Capture.create!(
   bird_id: 6,
   user_id: 3
 )
+
+puts "Wow! There are now #{Capture.count} captures! 🥳"

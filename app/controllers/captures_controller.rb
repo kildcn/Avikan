@@ -13,22 +13,23 @@ class CapturesController < ApplicationController
     @image = params[:capture][:image]
     endpoint = "http://164.68.99.217:8000/upload_image"
 
-    response =  HTTParty.post(endpoint, body: {
-      img:  File.open(@image),
-      type: 'image/png'
+    response = HTTParty.post(
+      endpoint,
+      body: {
+        img:  File.open(@image),
+        type: 'image/png'
       },
       headers: {
         accept: "application/json"
-      }
-    )
+      })
     # Saving the response in a hash and transforming the keys to symbols
     @bird_hash = JSON.parse(response.body)
     #.transform_keys{ |key| key.to_sym }
     if @bird_hash["bird_detected"]
 
-      @bird_scientific_name = @bird_hash["first_likely_bird_species"]["scientific_name"] 
+      @bird_scientific_name = @bird_hash["first_likely_bird_species"]["scientific_name"]
       @bird_from_db = Bird.find_by(scientific_name: @bird_scientific_name)
-      
+
       unless @bird_from_db.nil?
         puts "bird is in our db"
         # If this is true, the bird is already in our Birds table and we
@@ -60,7 +61,7 @@ class CapturesController < ApplicationController
   end
 
   def create_bird(bird)
-        @new_bird = Bird.new(
+    @new_bird = Bird.new(
           common_name: @bird_hash["first_likely_bird_species"]["common_name"],
           scientific_name: @bird_scientific_name,
           description:@bird_hash["first_likely_bird_species"]["description"],
@@ -80,9 +81,9 @@ class CapturesController < ApplicationController
   end
 
   def create_capture(bird)
-      @new_capture = Capture.new
-      @new_capture.bird_id = bird.id
-      @new_capture.user_id = current_user.id
+    @new_capture = Capture.new
+    @new_capture.bird_id = bird.id
+    @new_capture.user_id = current_user.id
   end
   # def image_params
   #   params.require(:capture).permit(:photo)
