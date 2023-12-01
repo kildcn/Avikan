@@ -30,7 +30,6 @@ class CapturesController < ApplicationController
         accept: "application/json"
 
       })
-    # Saving the response in a hash and transforming the keys to symbols
     @bird_hash = JSON.parse(response.body)
 
     if @bird_hash["bird_detected"]
