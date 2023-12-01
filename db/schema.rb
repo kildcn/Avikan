@@ -58,7 +58,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_01_114010) do
     t.string "rarity"
     t.string "sound_url"
     t.integer "weight"
-    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

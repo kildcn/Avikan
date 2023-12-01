@@ -1,1 +1,6 @@
 <h1>OUR BADGES</h1>
+
+
+<% @user.create_badges.each do |hash| %>
+    <h2><%= hash %></h2>
+<% end %>

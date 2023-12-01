@@ -1,3 +1,5 @@
+require "open-uri"
+
 class Capture < ApplicationRecord
   belongs_to :bird, optional: true
   belongs_to :user
