@@ -1,1 +1,9 @@
-<h1>This is the leaderboard</h1>
+<h1>social hub</h1>
+
+
+<h2>Global leaderboard</h2>
+<ul>
+  <% @top_users.each do |user| %>
+    <li><%= user.username %> - <%= user.user_xp %> XP</li>
+  <% end %>
+</ul>

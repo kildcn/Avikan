@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   get '/pages/map', to: 'pages#map'
   get '/pages/:id/badges', to: 'pages#badges'
   get '/pages/leaderboard', to: 'pages#leaderboard'
+  get 'spots', to: 'spots#index'
 
 
   resources :pages, only:[:badges, :leaderboard, :map]
