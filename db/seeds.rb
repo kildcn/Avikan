@@ -8,7 +8,7 @@ User.create!(
   password: '123456',
   date_joined: Date.today,
   avatar_url: "https://kitt.lewagon.com/placeholder/users/rebeccabri",
-  user_xp: 1100
+  user_xp: 1500
 )
 
 User.create!(
@@ -17,7 +17,7 @@ User.create!(
   password: '123456',
   date_joined: Date.today,
   avatar_url: "https://kitt.lewagon.com/placeholder/users/agalara",
-  user_xp: 1250
+  user_xp: 1200
 )
 
 User.create!(
@@ -26,7 +26,7 @@ User.create!(
   password: '123456',
   date_joined: Date.today,
   avatar_url: "https://kitt.lewagon.com/placeholder/users/kildcn",
-  user_xp: 1200
+  user_xp: 900
 )
 
 User.create!(
@@ -35,7 +35,7 @@ User.create!(
   password: '123456',
   date_joined: Date.today,
   avatar_url: "https://kitt.lewagon.com/placeholder/users/habidulin",
-  user_xp: 1010
+  user_xp: 750
 )
 
 User.create!(
@@ -44,7 +44,7 @@ User.create!(
   password: '123456',
   date_joined: Date.today,
   avatar_url: "https://kitt.lewagon.com/placeholder/users/emmvs",
-  user_xp: 700
+  user_xp: 1300
 )
 
 User.create!(
@@ -53,11 +53,11 @@ User.create!(
   password: '123456',
   date_joined: Date.today,
   avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
-  user_xp: 600
+  user_xp: 1700
 )
 
 puts "Created #{User.count} Users 🤷🏽 🙋🏻‍♀️ 💃🏼 👨🏼‍🌾"
-
+puts "Created #{User.count} Users with Different total_xp Values 🌟"
 puts "Seeds successfully created! 🌱"
 
 Bird.destroy_all

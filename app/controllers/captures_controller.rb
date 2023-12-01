@@ -1,7 +1,11 @@
 class CapturesController < ApplicationController
 
-  def index
-    @captures = Capture.all
+   def index
+    if params[:query]
+      @captures = Capture.global_capture_bird_search(params[:query]).where(user: current_user)
+    else
+      @captures = Capture.where(user: current_user)
+    end
   end
 
   def show
@@ -55,6 +59,12 @@ class CapturesController < ApplicationController
       redirect_to error_path
     end
   end
+
+  def search
+    @captures = Capture.search(params[:keyword])
+    render :index
+  end
+end
 
   def create_bird(bird)
     @new_bird = Bird.new(
