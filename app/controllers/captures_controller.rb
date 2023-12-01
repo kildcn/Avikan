@@ -33,7 +33,7 @@ class CapturesController < ApplicationController
 
     if @bird_hash["bird_detected"]
 
-      @bird_scientific_name = @bird_hash["first_likely_bird_species"]["scientific_name"] 
+      @bird_scientific_name = @bird_hash["first_likely_bird_species"]["scientific_name"]
       @bird_from_db = Bird.find_by(scientific_name: @bird_scientific_name)
 
       unless @bird_from_db.nil?
@@ -64,7 +64,6 @@ class CapturesController < ApplicationController
     @captures = Capture.search(params[:keyword])
     render :index
   end
-end
 
   def create_bird(bird)
     @new_bird = Bird.new(
@@ -91,7 +90,7 @@ end
       @new_capture.bird_id = bird.id
       @new_capture.user_id = current_user.id
   end
-  
+
   def reward
     @capture = Capture.find(params[:id])
     @captured_bird = @capture.bird
