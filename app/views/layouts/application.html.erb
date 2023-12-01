@@ -9,11 +9,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+    <link rel="icon" href="https://i.ibb.co/tbBcKDC/oiseau-1.png" type="image/png">
   </head>
 
+  <div class="container">
   <body><%= render "shared/navbar" %>
 <%= render "shared/flashes" %>
 
     <%= yield %>
   </body>
+  </div>
 </html>

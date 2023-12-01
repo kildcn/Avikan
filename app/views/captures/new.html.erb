@@ -1,7 +1,5 @@
 <h1>Upload a picture</h1>
 
-<%# The form comes here %>
-
 <%= simple_form_for(@new_capture)do |f| %>
   <%= f.input :image, as: :file %>
   <%= f.button :submit %>
