@@ -21,16 +21,20 @@ Rails.application.routes.draw do
   # get "show", to: "birds#show"
   # get "index", to: "birds#index"
 
-  resources :captures, only:[:show, :new, :create] do
+  # get "show", to: "birds#show"
+  # get "index", to: "birds#index"
+
+  resources :captures, only:[:index, :new, :create, :show] do
     member do 
       get :first
+      get :reward
     end
   end
 
   get '/birds/index', to: 'birds#index'
   get '/birds/:id', to: 'birds#show'
   get '/pages/map', to: 'pages#map'
-  get '/pages/badges', to: 'pages#badges'
+  get '/pages/:id/badges', to: 'pages#badges'
   get '/pages/leaderboard', to: 'pages#leaderboard'
   get 'spots', to: 'spots#index'
 
