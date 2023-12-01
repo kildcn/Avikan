@@ -1,9 +1,21 @@
-<h1>social hub</h1>
+<h1>Global Top 3 Leaderboard</h1>
 
+
+<div class="leaderboard-container">
+  <ol>
+    <% @global_top_3.each_with_index do |user, index| %>
+    <li><%= user.username %> - <%= user.user_xp %> XP</li>
+    <% end %>
+  </ol>
+</div>
 
 <h2>Global leaderboard</h2>
+
 <ul>
   <% @top_users.each do |user| %>
-    <li><%= user.username %> - <%= user.user_xp %> XP</li>
+    <%= link_to user_badges_path(user.id) do %>
+      <li><%= user.username %> - <%= user.user_xp %> XP</li>
+    <% end %>
   <% end %>
 </ul>
+
