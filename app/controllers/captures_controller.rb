@@ -27,6 +27,19 @@ class CapturesController < ApplicationController
     bird_hash = JSON.parse(response.body)
   end
 
+  def index
+    if params[:query]
+      @captures = Capture.global_capture_bird_search(params[:query]).where(user: current_user)
+    else
+      @captures = Capture.where(user: current_user)
+    end
+  end
+
+  def search
+    @captures = Capture.search(params[:keyword])
+    render :index
+  end
+end
     # call the API
 
     # Parse the API answer
@@ -45,4 +58,3 @@ class CapturesController < ApplicationController
     # Go to the waiting screen 2
 
     # Go to the success screen
-end

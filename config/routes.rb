@@ -18,14 +18,15 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # config/routes.rb
 
-  resources :captures, only:[:show, :new, :create, :first, :second, :success]
+  resources :captures, only:[:index ,:show, :new, :create, :first, :second, :success]
 
   get '/birds/index', to: 'birds#index'
   get '/birds/:id', to: 'birds#show'
   get '/pages/map', to: 'pages#map'
-  get '/pages/badges', to: 'pages#badges'
+  get '/pages/badges/:id', to: 'pages#badges'
   get '/pages/leaderboard', to: 'pages#leaderboard'
   get 'spots', to: 'spots#index'
+
 
   resources :pages, only:[:badges, :leaderboard, :map]
 
