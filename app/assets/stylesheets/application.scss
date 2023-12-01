@@ -21,4 +21,20 @@ body {
   ul, li, p {
     color: #FFFFFF; // Sets the color of unordered lists, list items, and paragraphs to white
   }
+
+  .pg_search_scope {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    font-weight: bold;
+  }
+
+  .search-button {
+    background-color: #FCCA49;
+    color: #110000;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
 }
