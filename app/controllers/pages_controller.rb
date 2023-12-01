@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def badges
+    @user = User.find(params[:id])
   end
 
   def leaderboard

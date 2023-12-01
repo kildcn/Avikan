@@ -1,6 +1,7 @@
 class Capture < ApplicationRecord
   belongs_to :bird, optional: true
   belongs_to :user
+  has_one_attached :photo
 
   def self.search(keyword)
     where("title LIKE ? OR description LIKE ?", "%#{keyword}%", "%#{keyword}%")
