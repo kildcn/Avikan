@@ -14,15 +14,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@200&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@200&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
   </head>
+  <body>
+    <%= render "shared/navbar" %>
+    <% if params[:controller] == "pages" && params[:action] == "home" %>
 
-  <div class="container">
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
-    <%= yield %>
+    <div class="container" style="width:90%">
+      <%= yield %>
+    </div>
+    <% else %>
+     <div class="container" style="width:90%">
+      <%= yield %>
+    </div>
+    <% end %>
+    <%= render "shared/flashes" %>
   </body>
-  </div>
 </html>

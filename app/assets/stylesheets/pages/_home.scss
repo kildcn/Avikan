@@ -1,1 +1,23 @@
 // Specific CSS for your home-page
+.home-top {
+  img {
+    width: 82px;
+    height: 83px;
+    border-radius: 17px;
+    object-fit: cover;
+  }
+}
+
+.home-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.icon-wrapper{
+  text-align: center;
+  img {
+  width: 80px;
+  height: 80px;
+  }
+}

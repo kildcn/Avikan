@@ -46,7 +46,7 @@ class CapturesController < ApplicationController
         # The bird is not in the birds table
         @new_bird = create_bird(@bird_hash)
         file = URI.open(@image)
-        @new_bird.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+        @new_bird.photo.attach(io: file, filename: "#{@bird_hash["first_likely_bird_species"]["common_name"]}.png", content_type: "image/png")
         @new_bird.save
         create_capture(@new_bird)
         @new_capture.save
@@ -69,7 +69,7 @@ class CapturesController < ApplicationController
   end
 
   def create_bird(bird)
-    return Bird.new(
+     Bird.new(
       common_name: @bird_hash["first_likely_bird_species"]["common_name"] || ["barkpecker","quail-plover"," Andean tit-spinetail"].sample,
       scientific_name: @bird_scientific_name || ["daphoenositta chrysoptera","ortyxelos meiffrenii","leptasthenura andicola"].sample,
       description:@bird_hash["first_likely_bird_species"]["description"] || ["this bird is amazing","this bird flies, sometimes","It can sing! Pips!"].sample,
@@ -95,13 +95,15 @@ class CapturesController < ApplicationController
   end
 
   def reward
+
     @capture = Capture.find(params[:id])
     @captured_bird = @capture.bird
-    total_points = @captured_bird.rarity * @captured_bird.experience_points
-    @user = current_user
-    current_user_points = @user.user_xp
-    added_points = current_user_points += total_points
-    @user.update(user_xp: added_points)
+
+    # total_points = @captured_bird.rarity * @captured_bird.experience_points
+    # @user = current_user
+    # current_user_points = @user.user_xp
+    # added_points = current_user_points += total_points
+    # @user.update(user_xp: added_points)
   end
 
   def article_params
