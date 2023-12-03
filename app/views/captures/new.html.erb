@@ -9,7 +9,9 @@
       <%= f.input :image, as: :file, input_html: {class: "tag-selector", data:{ action: "change->camera#readURL"}}, label: ('<i class="fa-solid fa-plus"></i>').html_safe %>
     </div>
     <h5 class="pt-3 animated"  style="font-weight:300;" data-camera-target="detect"></h5>
-  <%= f.submit "" , class: "upload-button mt-5" %>
+    <div class="outter-button mt-3">
+      <%= f.submit "" , class: "shimmer", data: {camera_target: "actionbutton"} %>
+    </div>
   </div>
 <% end %>
 

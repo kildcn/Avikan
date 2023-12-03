@@ -3,10 +3,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="camera"
 export default class extends Controller {
-  static targets = ["preview", "tagwrapper", "formcenter","aim", "detect"]
+  static targets = ["preview", "tagwrapper", "formcenter", "aim", "detect", "actionbutton"]
 
   connect() {
     console.log(this.previewTarget)
+    console.log(this.actionbuttonTarget)
   }
 
   readURL(e){
@@ -18,6 +19,7 @@ export default class extends Controller {
     this.previewTarget.classList.remove("d-none")
     this.detectTarget.classList.add("fadeIn")
     this.detectTarget.innerText = "・・ Target Spotted ・・"
+    this.actionbuttonTarget.value= "Upload"
     this.aimTarget.after(this.previewTarget)
     // reader.addEventListener("load", function () {
     //   var image = new Image();

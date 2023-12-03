@@ -56,7 +56,7 @@ export default class extends Controller {
 
     setTimeout(() => {
       window.location.replace(this.urlValue + "/" + "captures" + "/" + this.captureValue+"/"+"reward")
-    }, 9000);
+    }, 10500);
 
     //   setTimeout(() => {
     //     this.pigeonTarget.classList.add("fadeOut")

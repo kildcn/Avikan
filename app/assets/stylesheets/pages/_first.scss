@@ -18,8 +18,12 @@
   .gif{
     position: absolute;
     width: 100%;
+
     z-index: 4;
     animation-duration: 3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 
