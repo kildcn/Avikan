@@ -1,59 +1,56 @@
-<div class="main_container">
-<%# <%= cl_image_tag @new_capture.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="show-wrapper"  
+style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @captured_bird.photo.key %>')"
+>
+<div class="container">
+  <div class=information-holder>
 
-  <% if @new_capture.nil?%>
-  <% @new_capture = Capture.new %>
-  <% @new_capture.bird_id = Bird.last.id %>
-  <% @new_capture.user_id = current_user.id %>
-  <% @new_capture.save %>
-  <% end %>
+      <div class="bird_info_small_card">
+        <h3 class= ""> <%= @captured_bird.common_location%> </h3>
+        <h1 class= ""> <%= @captured_bird.common_name%> </h1>
+        <div class="bird_stats">
+          <div class="info-row">
 
-  <div class="bird_info_small_card">
-    <h3 class= ""> <%= @new_capture.bird.common_location%> </h3>
-    <h1 class= ""> <%= @new_capture.bird.common_name%> </h1>
-
-    <div class="bird_stats">
-      <div class="row">
-
-        <div class="mini-card">Weight
-          <div> <%= @new_capture.bird.weight%> </div>
-        </div>
-        
-        <div class="mini-card">Size
-          <div> <%= @new_capture.bird.bird_size%> </div>
-        </div>
-        
-        <div class="mini-card">Migratory?
-          <div> <%= @new_capture.bird.migrates ? "Yes" : "No"%> </div>
-        </div>
-
-      </div>
-
-      <div class="row">
-        <div class="mini-card">Habitat<div> <%= @new_capture.bird.bird_habitat_type%> </div></div>
-        <div class="mini-card">Diet<div> <%= @new_capture.bird.diet%> </div></div>
-
-        <div class="" data-controller="more-info-button">
+            <div class="mini-card">Weight
+              <div> <%= @captured_bird.weight%> </div>
+            </div>
+            
+            <div class="mini-card">Size
+              <div> <%= @captured_bird.bird_size%> </div>
+            </div>
           
-          <button class="btn btn-primary" 
-          data-action="click->more-info-button#more"
-          data-more-info-button-target="plusbutton"> + 
-          </button>
-
-          <div id="aditional-info" class="d-none" data-more-info-button-target="extrainfo">
-            <p> Scienfic name: <%= @new_capture.bird.scientific_name %> </p> 
-            <p> Conservation status: <%= @new_capture.bird.conservation_status %> </p> 
-            <p> Where can I find it?  <%= @new_capture.bird.habitat %> </p> 
-            <p> Description: <%= @new_capture.bird.description %> </p> 
+            <div class="mini-card">Migratory?
+              <div> <%= @captured_bird.migrates ? "Yes" : "No"%> </div>
+            </div>
 
           </div>
-        
+
+          <div class="info-row mt-4">
+            <div class="mini-card">Habit<div> <%= @captured_bird.bird_habitat_type%> </div></div>
+            <div class="mini-card">Diet<div> <%= @captured_bird.diet%> </div></div>
         </div>
+
+            <div class="" data-controller="more-info-button">
+              
+              <button class="expand-info-button" 
+              data-action="click->more-info-button#more"
+              data-more-info-button-target="plusbutton"> + 
+              </button>
+
+              <div id="aditional-info" class="d-none" data-more-info-button-target="extrainfo">
+                <p class="extra-info"> Scientific name: <%= @captured_bird.scientific_name %> </p> 
+                <p class="extra-info"> Conservation status: <%= @captured_bird.conservation_status %> </p> 
+                <p class="extra-info"> Where can I find it?  <%= @captured_bird.habitat %> </p> 
+                <p class="extra-info"> Description: <%= @captured_bird.description %> </p> 
+
+              </div>
+            
+            </div>
+        
+        </div>  
       
       </div>
-    
+
     </div>  
   
   </div>
-
 </div>  

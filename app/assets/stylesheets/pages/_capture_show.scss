@@ -1,11 +1,30 @@
+.show-wrapper {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.information-holder {
+  display: flex;
+  align-items: flex-end;
+  height: 95vh;
+  position: relative;
+}
+
 .bird_stats {
   display: flex;
   flex-direction: column;
 }
 
-.row {
+.info-row {
   display: flex;
   flex-direction: row;
+  .mini-card{
+    margin-right: 40px;
+    
+
+  }
 }
 
 .mini-card {
@@ -15,4 +34,24 @@
 
 .show{
   display: block;
+}
+
+.expand-info-button {
+  position: absolute;
+  bottom: 8px;
+  right:12%;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 24px;
+  padding: 1px;
+  color: $yellow;
+  background-color: rgba(167, 167, 167, 0.315);
+  border: solid 1px $yellow;
+}
+
+#aditional-info{
+  .extra-info {
+    color: white;
+  }
 }
