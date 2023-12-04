@@ -91,6 +91,7 @@ export default class extends Controller {
     bottomPanel.style.backgroundColor = "black"
     bottomPanel.style.zIndex = "1"
     bottomPanel.style.display = "none"
+    // bottomPanel.style.backgroundImage =
     this.element.appendChild(bottomPanel)
 
     const closeButton = document.createElement("button")

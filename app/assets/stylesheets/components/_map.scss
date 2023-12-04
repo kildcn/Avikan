@@ -75,16 +75,11 @@ h2 {
   display: none !important;
 }
 
-.close-button {
-  background: none; /* Removes the background */
-  color: #FCCA49; /* Sets the text color */
-  border: none; /* Removes the border */
-  cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
-  padding: 5px 10px; /* Optional: Adds some padding */
-  font-size: 1em; /* Optional: Adjusts the font size */
-  /* Add other styles as needed */
-}
-
 #bottom-panel {
-  background-color: rgba(0, 0, 0, 0.7) !important;
+  button {
+    all: unset;
+    background-color: #fcc94900;
+    color: #FCCA49;
+    height: 40%;
+  }
 }
