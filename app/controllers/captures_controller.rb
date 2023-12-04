@@ -28,7 +28,6 @@ class CapturesController < ApplicationController
       },
       headers: {
         accept: "application/json"
-
       })
     @bird_hash = JSON.parse(response.body)
 
@@ -69,7 +68,7 @@ class CapturesController < ApplicationController
   end
 
   def create_bird(bird)
-     Bird.new(
+    Bird.new(
       common_name: @bird_hash["first_likely_bird_species"]["common_name"] || ["barkpecker","quail-plover"," Andean tit-spinetail"].sample,
       scientific_name: @bird_scientific_name || ["daphoenositta chrysoptera","ortyxelos meiffrenii","leptasthenura andicola"].sample,
       description:@bird_hash["first_likely_bird_species"]["description"] || ["this bird is amazing","this bird flies, sometimes","It can sing! Pips!"].sample,
