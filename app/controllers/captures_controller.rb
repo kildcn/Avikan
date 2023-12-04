@@ -10,6 +10,7 @@ class CapturesController < ApplicationController
 
   def show
     @capture = Capture.find(params[:id])
+    @captured_bird = @capture.bird
   end
 
   def new
