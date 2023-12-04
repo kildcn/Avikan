@@ -1,0 +1,18 @@
+.bird_stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.mini-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.show{
+  display: block;
+}
