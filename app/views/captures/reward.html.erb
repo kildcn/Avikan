@@ -1,1 +1,25 @@
+<div class="reward-wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.69), rgba(0,0,0,0.83)), url('<%= cl_image_path @captured_bird.photo.key %>')">
+
+
+  <div class="container" style="width:90%;">
+    <h3 class="header-font animated fadeIn pt-5" style="margin:0;padding:0;color:#fcca49;">It's bird it's a plane...</h3>
+    <h1 class="display-1 mb-2 animated fadeIn">IT'S...</h1>
+
+      <div class="reward-shadow">
+        
+      </div>
+  </div>
+
+  </div>
+
 <h1>congrats</h1>
+
+<p> <%= @captured_bird.common_name %></p>
+<p> <%= @captured_bird.scientific_name %></p>
+<p> Common location: <%= @captured_bird.common_location %></p>
+<p> <%= @captured_bird.weight %> grams</p>
+<%= @captured_bird.bird_habitat_type %></p>
+<p> <%= @captured_bird.bird_size %> size </p>
+<p>Migrates <%= @captured_bird.migrates %>? Yes : No </p>
+<p> Diet? <%= @captured_bird.diet %></p>
+<p> <%= @captured_bird.common_name %></p>
