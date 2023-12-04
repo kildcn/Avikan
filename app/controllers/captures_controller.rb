@@ -133,7 +133,7 @@ class CapturesController < ApplicationController
   def first
     @capture = Capture.find(params[:id])
     @captured_bird = @capture.bird
-    
+
   end
 
   def search
@@ -172,11 +172,11 @@ class CapturesController < ApplicationController
     @capture = Capture.find(params[:id])
     @captured_bird = @capture.bird
 
-    # total_points = @captured_bird.rarity * @captured_bird.experience_points
-    # @user = current_user
-    # current_user_points = @user.user_xp
-    # added_points = current_user_points += total_points
-    # @user.update(user_xp: added_points)
+    @total_points = @captured_bird.rarity.to_i * @captured_bird.experience_points
+    @user = current_user
+    @current_user_points = @user.user_xp
+    added_points = @current_user_points += @total_points
+    @user.update(user_xp: added_points)
   end
 
   def article_params
