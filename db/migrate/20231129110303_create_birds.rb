@@ -16,8 +16,6 @@ class CreateBirds < ActiveRecord::Migration[7.1]
       t.string :rarity
       t.string :sound_url
       t.integer :weight
-      t.string :photo
-
       t.timestamps
     end
   end

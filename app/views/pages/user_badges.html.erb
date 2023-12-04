@@ -1,0 +1,8 @@
+<h1>OUR BADGES</h1>
+
+
+<% @user.create_badges.each do |hash| %>
+<div style="padding:40px;border-radius:5;border: 1px solid white;">
+    <h2>Badge Name:<%= hash[:name] %></h2>
+    </div>
+<% end %>

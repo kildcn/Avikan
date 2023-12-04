@@ -1,1 +1,20 @@
-<h1>Analyzing the bird ... </h1>
+<div data-controller="first" data-first-url-value="<%= request.base_url %>" data-first-capture-value="<%= @captured_bird.id %>">
+  <h3 class="header-font" style="margin:0;padding:0;color:#fcca49;">FEATHER</h3>
+  <h1 class="display-1 mb-5">FINDER</h1>
+  <div class="bird-anlayzer">
+      <%= image_tag "pigeon.gif", class: "animated gif d-none", data: {first_target: "pigeon"} %>
+      <%= image_tag "owl.gif", class: "animated gif d-none", data: {first_target: "owl"} %>
+            <%= image_tag "golden_goose.gif", class: "animated gif d-none", data: {first_target: "golden"} %>
+    <%= image_tag "scan.gif", class: "animated gif d-none", data: {first_target: "scan"} %>
+    <div class="preview-blob-analyize"  style="background-image: linear-gradient(rgba(0,0,0,0.69), rgba(0,0,0,0.83)), url('<%= cl_image_path @captured_bird.photo.key %>')">
+    </div>
+  </div>
+  <div class="mt-3" data-controller="typer" style="text-align:center;">
+    <h5 style="color:#fcca49;font-weight:300;" class="">Analyzing<br> <span data-typer-target="element"></span></h5>
+  </div>
+
+ <h1> </h1>
+
+
+
+</div>

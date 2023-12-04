@@ -87,7 +87,6 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/european_robin.mp3",
   weight: 18,
-  photo: "https://live.staticflickr.com/65535/51751617609_160d3e2d70_b.jpg"
 )
 
 Bird.create(
@@ -106,7 +105,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/common_blackbird.mp3",
   weight: 100,
-  photo: "https://live.staticflickr.com/1650/25997991936_d8c11ace84_b.jpg"
+
 )
 
 Bird.create(
@@ -125,7 +124,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/great_tit.mp3",
   weight: 20,
-  photo: "https://live.staticflickr.com/1728/42451388662_1bf7cebe9d_b.jpg"
+
 )
 
 Bird.create(
@@ -144,7 +143,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/barn_swallow.mp3",
   weight: 19,
-  photo: "https://live.staticflickr.com/65535/53020276508_547913a1da_b.jpg"
+
 )
 
 Bird.create(
@@ -163,7 +162,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/eurasian_blue_tit.mp3",
   weight: 11,
-  photo: "https://live.staticflickr.com/65535/51953209067_089e4d01b1_b.jpg"
+
 )
 
 Bird.create(
@@ -182,7 +181,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/eurasian_nuthatch.mp3",
   weight: 23,
-  photo: "https://live.staticflickr.com/65535/52529335601_60ab29d647_b.jpg"
+ 
 )
 
 Bird.create(
@@ -201,7 +200,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/common_chaffinch.mp3",
   weight: 28,
-  photo: "https://live.staticflickr.com/2076/2345292562_a3cf676ce0_o.jpg"
+ 
 )
 
 Bird.create(
@@ -220,7 +219,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/common_wood_pigeon.mp3",
   weight: 500,
-  photo: "https://live.staticflickr.com/65535/49808416606_cf775e8ed3_b.jpg"
+ 
 )
 
 Bird.create(
@@ -239,7 +238,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/european_goldfinch.mp3",
   weight: 14,
-  photo: "https://live.staticflickr.com/65535/51852766425_a6f4813c62_b.jpg"
+
 )
 
 Bird.create(
@@ -258,7 +257,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/eurasian_magpie.mp3",
   weight: 200,
-  photo: "https://live.staticflickr.com/1908/44243436974_bf6df05936_b.jpg"
+ 
 )
 
 puts "Bird seeds created: #{Bird.count} 🐣"
@@ -367,9 +366,11 @@ Spot.create!(
   dislikes: 2
 )
 
-"#{Spot.count} bird spots created! 📍🌍"
+puts "#{Spot.count} bird spots created! 📍🌍"
 
 # create captures
+
+puts "Creating captures 📸"
 
 Capture.create!(
   bird_id: 10, # Eurasian Magpie
@@ -445,3 +446,5 @@ Capture.create!(
   bird_id: 6,
   user_id: 3
 )
+
+puts "Wow! There are now #{Capture.count} captures! 🥳"
