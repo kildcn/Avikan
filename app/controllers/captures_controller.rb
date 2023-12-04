@@ -18,19 +18,90 @@ class CapturesController < ApplicationController
 
   def create
     @image = params[:capture][:image]
-    endpoint = "http://164.68.99.217:8000/upload_image"
+    # endpoint = "http://164.68.99.217:8000/upload_image"
 
-    response = HTTParty.post(
-      endpoint,
-      body: {
-        img:  File.open(@image),
-        type: 'image/png'
-      },
-      headers: {
-        accept: "application/json"
+    # response = HTTParty.post(
+    #   endpoint,
+    #   body: {
+    #     img:  File.open(@image),
+    #     type: 'image/png'
+    #   },
+    #   headers: {
+    #     accept: "application/json"
 
-      })
-    @bird_hash = JSON.parse(response.body)
+    #   })
+    # @bird_hash = JSON.parse(response.body)
+
+    @bird_hash = {
+  "status"=> "ok",
+  "bird_detected"=> true,
+  "timestamp"=> "2023-12-01_15-13-41",
+  "first_likely_bird_species"=> {
+    "species_no"=> 8787,
+    "scientific_name"=> "parotia sefilata",
+    "probability"=> "0.82",
+    "description"=> "The western or Arfak parotia (Parotia sefilata) is a medium-sized, approximately 33 cm long, bird-of-paradise with a medium-length tail.",
+    "common_name"=> "Western Parotia",
+    "size"=> 332.2,
+    "size_category"=> "Medium",
+    "mass"=> 181.72,
+    "habitat"=> "Forest",
+    "habitat_category"=> "Dense habitats",
+    "migration"=> 1,
+    "trophic_level_feeding_habits"=> "Omnivore",
+    "min_latitude"=> -2.89,
+    "max_latitude"=> -0.43,
+    "centroid_latitude"=> -1.1,
+    "centroid_longitude"=> 133.41,
+    "range_size"=> 7209.38,
+    "species_status"=> "Not Evaluated",
+    "status"=> "ENRICHED"
+  },
+  "second_likely_bird_species"=> {
+    "species_no"=> 1567,
+    "scientific_name"=> "sinosuthora przewalskii",
+    "probability"=> "0.66",
+    "description"=> "Przevalski's parrotbill (Suthora przewalskii) or the rusty-throated parrotbill, is a species of parrotbill in the family Paradoxornithidae. It is endemic to a small area of central China. Its natural habitat is temperate forests. It is threatened by habitat loss.",
+    "common_name"=> "Przevalski's Parrotbill",
+    "size"=> 143.8,
+    "size_category"=> "Medium",
+    "mass"=> 8.5,
+    "habitat"=> "Forest",
+    "habitat_category"=> "Semi-open habitats",
+    "migration"=> 1,
+    "trophic_level_feeding_habits"=> "Omnivore",
+    "min_latitude"=> 32.37,
+    "max_latitude"=> 34.81,
+    "centroid_latitude"=> 33.68,
+    "centroid_longitude"=> 104.41,
+    "range_size"=> 32728.45,
+    "species_status"=> "Least Concern",
+    "status"=> "ENRICHED"
+  },
+  "third_likely_bird_species"=> {
+    "species_no"=> 7997,
+    "scientific_name"=> "eutoxeres aquila",
+    "probability"=> "0.01",
+    "description"=> "The white-tipped sicklebill (Eutoxeres aquila) is a species of hummingbird in the family Trochilidae. It is found in Colombia, Costa Rica, Ecuador, Panama, Peru, and Venezuela.[3][4]",
+    "common_name"=> "White-tipped Sicklebill",
+    "size"=> 131.3,
+    "size_category"=> "Small",
+    "mass"=> 10.6,
+    "habitat"=> "Forest",
+    "habitat_category"=> "Dense habitats",
+    "migration"=> 1,
+    "trophic_level_feeding_habits"=> "Herbivore",
+    "min_latitude"=> -8.52,
+    "max_latitude"=> 10.74,
+    "centroid_latitude"=> 1.91,
+    "centroid_longitude"=> -77.73,
+    "range_size"=> 306610.24,
+    "species_status"=> "Not Evaluated",
+    "status"=> "ENRICHED"
+  }
+}
+
+
 
     if @bird_hash["bird_detected"]
 
@@ -39,8 +110,8 @@ class CapturesController < ApplicationController
 
       unless @bird_from_db.nil?
         # The bird is in Birds table
-        create_capture(@bird_hash)
-        @new_capture.save
+        create_capture(@bird_from_db)
+        @new_capture.save notice: "match"
         redirect_to first_capture_path(@new_capture)
       else
         # The bird is not in the birds table
