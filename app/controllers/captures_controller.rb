@@ -112,6 +112,11 @@ class CapturesController < ApplicationController
         # The bird is in Birds table
         puts "Bird is in birds table"
         create_capture(@bird_from_db)
+        @spot = Spot.new
+        @spot.user = current_user
+        @spot.bird = @bird_from_db
+        @spot.address = "Rudi Dutschke Str. 26, 10969 Berlin"
+        @spot.save
         @new_capture.save notice: "match"
         redirect_to first_capture_path(@new_capture)
       else
@@ -121,6 +126,11 @@ class CapturesController < ApplicationController
         file = URI.open(@image)
         @new_bird.photo.attach(io: file, filename: "#{@bird_hash["first_likely_bird_species"]["common_name"]}.png", content_type: "image/png")
         @new_bird.save
+        @spot = Spot.new
+        @spot.user = current_user
+        @spot.bird = @new_bird
+        @spot.address = "Rudi Dutschke Str. 26, 10969 Berlin"
+        @spot.save
         create_capture(@new_bird)
         @new_capture.save
         redirect_to first_capture_path(@new_capture)
@@ -134,7 +144,7 @@ class CapturesController < ApplicationController
   def first
     @capture = Capture.find(params[:id])
     @captured_bird = @capture.bird
-    
+
   end
 
   def search

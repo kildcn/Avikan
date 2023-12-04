@@ -1,10 +1,85 @@
 .mapboxgl-popup {
   max-width: 200px;
-  background: black;
+  background: rgba(0, 0, 0, 0);
+  display: none;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: "Open Sans", sans-serif;
-  background-color: rgb(0, 0, 0) !important;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  position: relative !important;
+  bottom: 0 !important;
+  border-radius: 10% !important;
+}
+
+.mapboxgl-popup-close-button {
+  color: #FCCA49;
+}
+
+h2 {
+  color: #FCCA49;
+  font-family: 'Pixelify Sans', sans-serif; // Sets the color of H1, H2, and H3 headings to a gold-like color
+}
+
+// a { /* Yellow background */
+//   color: white; /* Text color */
+//   text-align: center;
+//   padding: 10px 20px; /* Padding for button size */
+//   margin: 5px; /* Space between buttons */
+//   text-decoration: none; /* Removes underline from links */
+//   border: 1px solid #FCCA49;; /* Optional border */
+//   border-radius: 5px; /* Rounded corners */
+// }
+
+/* Optional: Hover effect for buttons */
+
+.a-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.A1 {
+  .btn1 { /* Yellow background */
+    color: white; /* Text color */
+    text-align: center;
+    padding: 10px 20px; /* Padding for button size */
+    margin: 5px; /* Space between buttons */
+    text-decoration: none; /* Removes underline from links */
+    border: 1px solid #FCCA49;; /* Optional border */
+    border-radius: 5px; /* Rounded corners */
+  }
+}
+
+.a-container {
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Text color */
+    text-align: center;
+    padding: 10px 20px; /* Padding for button size */
+    margin: 5px; /* Space between buttons */
+    text-decoration: none; /* Removes underline from links */
+    border: 1px solid #FCCA49;; /* Optional border */
+    border-radius: 5px;
+  }
+}
+
+.marker-black-and-white {
+  filter: grayscale(100%);
+}
+
+.mapboxgl-ctrl-logo, .mapboxgl-ctrl-attrib {
+  display: none !important;
+}
+
+#bottom-panel {
+  button {
+    all: unset;
+    background-color: #fcc94900;
+    color: #FCCA49;
+    height: 40%;
+  }
 }
