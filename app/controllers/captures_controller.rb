@@ -18,6 +18,7 @@ class CapturesController < ApplicationController
 
   def create
     @image = params[:capture][:image]
+
     # endpoint = "http://164.68.99.217:8000/upload_image"
 
     # response = HTTParty.post(
@@ -108,11 +109,13 @@ class CapturesController < ApplicationController
 
       unless @bird_from_db.nil?
         # The bird is in Birds table
+        puts "Bird is in birds table"
         create_capture(@bird_from_db)
         @new_capture.save notice: "match"
         redirect_to first_capture_path(@new_capture)
       else
         # The bird is not in the birds table
+        puts "Bird is not in birds table"
         @new_bird = create_bird(@bird_hash)
         file = URI.open(@image)
         @new_bird.photo.attach(io: file, filename: "#{@bird_hash["first_likely_bird_species"]["common_name"]}.png", content_type: "image/png")
@@ -130,6 +133,7 @@ class CapturesController < ApplicationController
   def first
     @capture = Capture.find(params[:id])
     @captured_bird = @capture.bird
+    
   end
 
   def search

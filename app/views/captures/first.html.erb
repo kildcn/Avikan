@@ -1,7 +1,8 @@
-<div data-controller="first" data-first-url-value="<%= request.base_url %>" data-first-capture-value="<%= @captured_bird.id %>">
+<div data-controller="first" data-first-url-value="<%= request.base_url %>" data-first-capture-value="<%= @capture.id %>">
   <h3 class="header-font" style="margin:0;padding:0;color:#fcca49;">FEATHER</h3>
   <h1 class="display-1 mb-5">FINDER</h1>
   <div class="bird-anlayzer">
+          <%= image_tag "scan.gif", class: "animated gif d-none", data: {first_target: "pigeon"} %>
       <%= image_tag "pigeon.gif", class: "animated gif d-none", data: {first_target: "pigeon"} %>
       <%= image_tag "owl.gif", class: "animated gif d-none", data: {first_target: "owl"} %>
             <%= image_tag "golden_goose.gif", class: "animated gif d-none", data: {first_target: "golden"} %>
