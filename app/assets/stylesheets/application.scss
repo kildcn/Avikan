@@ -6,15 +6,22 @@
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
+@import "animate";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
-body {
-  background-color: #000000; // Sets the background color of the body to black
+html{
+  overflow-x: hidden;
 
-  h1, h2, h3 {
+}
+
+body {
+  background-color: #060606; // Sets the background color of the body to black
+  color: white;
+
+  h1 {
     color: #FCCA49;
     font-family: 'Pixelify Sans', sans-serif; // Sets the color of H1, H2, and H3 headings to a gold-like color
   }
@@ -30,4 +37,9 @@ body {
     height: 70px;
     width: 70px;
   }
+}
+
+.header-font{
+  color: #FCCA49;
+  font-family: 'Pixelify Sans', sans-serif;
 }

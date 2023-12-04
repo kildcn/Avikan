@@ -1,4 +1,7 @@
-<div class="row justify-content-center">
+<h3 class="header-font animated fadeIn" style="margin:0;padding:0;color:#fcca49;">SAHRA'S</h3>
+<h1 class="display-1 mb-2 animated fadeIn">FLOCK</h1>
+
+<div class="row justify-content-center mb-4">
   <div class="col-sm-8 my-3">
     <%= form_with url: captures_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
@@ -12,5 +15,16 @@
 </div>
 
 <% @captures.each do |capture| %>
-  <p><%= capture.bird.common_name %></p>
+<% if capture.bird.photo.attached? %>
+    <div class="bird_card mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path capture.bird.photo.key %>')">
+    <p><%= capture.bird.common_name %></p>
+
+  </div>
+  <% else %>
+  <div class="bird_card mb-4" style="border: 1px solid white;">
+    <h2>No Bird Picture Attached</h2>
+    <p><%= capture.bird.common_name %></p>
+  </div>
+<% end %>
+
 <% end %>

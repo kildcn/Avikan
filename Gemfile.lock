@@ -85,6 +85,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    animate.css-rails (3.2.0)
     autoprefixer-rails (10.4.16.0)
       execjs (~> 2)
     aws_cf_signer (0.1.3)
@@ -325,10 +326,12 @@ PLATFORMS
   aarch64-linux
   arm64-darwin-22
   x86_64-darwin-17
+  x86_64-darwin-21
   x86_64-darwin-23
   x86_64-linux
 
 DEPENDENCIES
+  animate.css-rails (~> 3.2)
   autoprefixer-rails
   bootsnap
   bootstrap (~> 5.2)

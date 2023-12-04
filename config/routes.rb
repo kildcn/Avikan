@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get '/pages/map', to: 'pages#map'
   get '/pages/:id/badges', to: 'pages#badges'
   get '/pages/leaderboard', to: 'pages#leaderboard'
-  get 'spots', to: 'spots#index'
+
 
   resources :users, only: [:search] do
     resources :pages, only: [:stats]
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   resources :friends, only: [:create, :delete]
 
-  resources :spots, only: [:create, :destroy] do
+  resources :spots, only: [:create, :destroy, :index] do
     resources :reviews, only: [:new]
   end
 end

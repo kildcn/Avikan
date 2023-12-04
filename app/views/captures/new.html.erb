@@ -1,6 +1,19 @@
-<h1>Upload a picture</h1>
+<h3 class="header-font" style="margin:0;padding:0;color:#fcca49;">FEATHER</h3>
+<h1 class="display-1 mb-5">FINDER</h1>
+<div data-controller="camera">
 
-<%= simple_form_for(@new_capture)do |f| %>
-  <%= f.input :image, as: :file %>
-  <%= f.button :submit %>
+<%= simple_form_for(@new_capture,  data: {camera_target: "simpleform"},  html: {multipart: true})  do |f| %>
+  <div class="form-center" data-camera-target="formcenter">
+    <span data-camera-target="aim"></span>
+    <div class="tag-item" data-camera-target="tagwrapper">
+      <%= f.input :image, as: :file, input_html: {class: "tag-selector", data:{ action: "change->camera#readURL"}}, label: ('<i class="fa-solid fa-plus"></i>').html_safe %>
+    </div>
+    <h5 class="pt-3 animated"  style="font-weight:300;" data-camera-target="detect"></h5>
+    <div class="outter-button mt-3">
+      <%= f.submit "" , class: "shimmer", data: {camera_target: "actionbutton"} %>
+    </div>
+  </div>
 <% end %>
+
+  <img class="preview-blob d-none" data-camera-target="preview" />
+</div>
