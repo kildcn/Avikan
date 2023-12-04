@@ -14,10 +14,10 @@ class PagesController < ApplicationController
 
   def user_badges
     @user = User.find(params[:id])
-    
+
   end
 
   def leaderboard
-      @global_top_3 = User.order(user_xp: :desc).limit(3)
+      @global_top_5 = User.order(user_xp: :desc).limit(5)
   end
 end

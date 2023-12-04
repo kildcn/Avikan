@@ -14,7 +14,7 @@
 body {
   background-color: #000000; // Sets the background color of the body to black
 
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     color: #FCCA49;
     font-family: 'Pixelify Sans', sans-serif; // Sets the color of H1, H2, and H3 headings to a gold-like color
   }
@@ -25,9 +25,31 @@ body {
   }
 }
 
+ul {
+  list-style-type: none;
+}
+
 .pic {
   img {
     height: 70px;
     width: 70px;
   }
+}
+
+.icon {
+  img {
+    height: 20px;
+    width: 2Opx;
+  }
+}
+
+.btn {
+  background-color: #2E363F;
+  &:hover {
+    background-color: darken(#FCCA49, 20%);
+  }
+}
+
+.form-control {
+  background-color: #2E363F;
 }

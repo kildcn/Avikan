@@ -1,11 +1,18 @@
 <h1>Global Leaderboard</h1>
 
-
-<div class="leaderboard-container">
-  <ol>
-    <% @global_top_3.each_with_index do |user, index| %>
-    <li><%= user.username %> - <%= user.user_xp %> XP</li>
+<div class="icon leaderboard-container d-flex" style="flex-direction: column;">
+  <ul>
+    <% @global_top_5.each_with_index do |user, index| %>
+      <li style="display: flex; align-items: center; justify-content: center;">
+        <% if index == 0 %>
+          <%= image_tag "winner.png", alt: "First Place" %> <!-- First place icon -->
+        <% elsif index == 1 %>
+          <%= image_tag "second.png", alt: "Second Place" %> <!-- Second place icon -->
+        <% elsif index == 2 %>
+          <%= image_tag "third.png", alt: "Third Place" %> <!-- Third place icon -->
+        <% end %>
+        <%= user.username %> - <%= user.user_xp %> XP
+      </li>
     <% end %>
-  </ol>
+  </ul>
 </div>
-

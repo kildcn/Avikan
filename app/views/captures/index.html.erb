@@ -6,11 +6,22 @@
             class: "form-control",
             placeholder: "Type a keyword"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <%= submit_tag "Search", name: "", class: "btn" %>
     <% end %>
   </div>
 </div>
 
 <% @captures.each do |capture| %>
-  <p><%= capture.bird.common_name %></p>
+<div class="container d-inline-flex justify-content-center m-3">
+    <ul>
+        <h4><%= capture.bird.common_name %></h4>
+        <li>Scientific name: <%= capture.bird.scientific_name %></li>
+        <li>About this bird: <%= capture.bird.description %></li>
+        <li><%= capture.bird.habitat %></li>
+        <li><%= capture.bird.conservation_status %></li>
+        <li><%= capture.bird.common_location %></li>
+        <li><%= capture.bird.bird_habitat_type %></li>
+    </ul>
+    </div>
 <% end %>
+</div>
