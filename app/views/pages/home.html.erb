@@ -1,6 +1,10 @@
 <div class="home-top">
   <div class="d-flex justify-content-between">
-    <h1 class="display-1">Welcome <br> Sarah</h1>
+    <% if user_signed_in? %>
+    <h1 class="display-1">Welcome <br> <%= current_user.username %></h1>
+  <% else %>
+    <h1 class="display-1">Welcome Guest</h1>
+  <% end %>
     <%= image_tag "user.webp" %>
   </div>
   <h5 class="mt-2" style="font-weight:300;"><span style="color:#fcca49;">Level</span> DAVID ATTENBOROUGH</h5>
