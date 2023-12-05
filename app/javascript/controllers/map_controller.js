@@ -7,9 +7,11 @@ export default class extends Controller {
     markers: Array
   }
 
+  static targets = ["placeholder"]
+
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
-
+    console.log("hello");
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/liankee/clpl9hsz800v901p9fuku3b4u"
@@ -19,7 +21,7 @@ export default class extends Controller {
     this.addMarkers()
     this.fitBoundsToMarkers()
     this.addCurrentLocation()
-    this.createBottomPanel()
+     this.createBottomPanel()
 
     // Map click listener
     this.map.on('click', (e) => {
@@ -39,6 +41,7 @@ export default class extends Controller {
       const customMarker = document.createElement("div")
       customMarker.innerHTML = marker.marker_html
       customMarker.className = 'map-marker'; // Add a class for styling
+      console.log(marker)
 
       const newMarker = new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])
@@ -88,7 +91,8 @@ export default class extends Controller {
     bottomPanel.style.position = "absolute"
     bottomPanel.style.bottom = "0"
     bottomPanel.style.width = "100%"
-    bottomPanel.style.backgroundColor = "black"
+    bottomPanel.style.backgroundColor = "transparent"
+    bottomPanel.style.height = "200px"
     bottomPanel.style.zIndex = "1"
     bottomPanel.style.display = "none"
     // bottomPanel.style.backgroundImage =
