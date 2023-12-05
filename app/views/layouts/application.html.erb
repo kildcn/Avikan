@@ -20,12 +20,12 @@
   </head>
   <body>
     <%= render "shared/navbar" %>
-    <% if (params[:controller] == "captures" && params[:action] == "reward")   %>
+    <% if (params[:controller] == "captures" && params[:action] == "reward") || (params[:controller] == "captures" && params[:action] == "show") %>
 
-    <div class="custom-container">
-        <%= yield %>
-    </div>
-    <% else %>
+      <div class="custom-container">
+          <%= yield %>
+      </div>
+      <% else %>
 
   <div class="container" style="width:90%">
         <%= yield %>

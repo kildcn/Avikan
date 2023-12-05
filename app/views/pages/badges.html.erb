@@ -1,6 +1,14 @@
-<h1>OUR BADGES</h1>
+<div class="container" style="width:90%">
+  <h1>BADGES</h1>
 
+  <div class="badge-container">
+    <% @user.create_badges.each do |badge| %>
+      <div class="badge <%= 'unlocked' if badge[:unlocked] %>">
+        <h2><%= badge[:name] %></h2>
+        <% unless badge[:unlocked] %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<% @user.create_badges.each do |hash| %>
-    <h2><%= hash %></h2>
-<% end %>

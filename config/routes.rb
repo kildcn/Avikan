@@ -13,20 +13,24 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :pages, only: [:badges, :leaderboard, :map] do
-    member do
-      get :first
-      get :reward
-      get :badges, to: 'pages#user_badges', as: 'user_badges'
-    end
-  end
+  # resources :pages, only: [:leaderboard, :map] do
+  #   member do
+  #     get :badges, on: :member
+  #     # get :badges, to: 'pages#badges', as: 'badges'
+  #     # get :badges, to: 'pages#user_badges', as: 'user_badges'
+  #   end
+  # end
+
+  resources :pages, only: [:leaderboard, :map]
 
   get '/birds/index', to: 'birds#index'
   get '/birds/:id', to: 'birds#show'
   get '/pages/map', to: 'pages#map'
-  get '/pages/:id/badges', to: 'pages#badges'
-  get '/pages/leaderboard', to: 'pages#leaderboard'
 
+  get '/badges/:id', to: 'pages#badges', as: 'user_badges'
+  # get '/pages/badges/:id', to: 'pages#badges', as: 'badge'
+
+  get '/pages/leaderboard', to: 'pages#leaderboard'
 
   resources :users, only: [:search] do
     resources :pages, only: [:stats]

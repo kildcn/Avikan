@@ -1,0 +1,33 @@
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.badge {
+  border: 2px solid #333;
+  padding: 15px;
+  margin: 10px;
+  width: 150px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.unlocked {
+  background-color: #FCCA49;
+  color: #333;
+}
+
+.unlocked:hover {
+  background-color: #FFDB6E;
+}
+
+.badge:not(.unlocked) {
+  opacity: 0.6;
+}
+
+.badge:not(.unlocked):hover {
+  background-color: transparent;
+}
