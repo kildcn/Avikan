@@ -39,10 +39,10 @@ style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(
               </button>
 
               <div id="aditional-info" class="d-none my-4" data-more-info-button-target="extrainfo">
-                <p class="extra-info"> Scientific name: <%= @captured_bird.scientific_name.capitalize!() %> </p> 
-                <p class="extra-info"> Conservation status: <%= @captured_bird.conservation_status.capitalize!() %> </p> 
-                <p class="extra-info"> Where can I find it?  <%= @captured_bird.habitat.capitalize() %> </p> 
-                <p class="extra-info"> <%= @captured_bird.description %> </p> 
+                <h5 class="extra-info"> Scientific name: <%= @captured_bird.scientific_name.capitalize!() %> </h5> 
+                <h5 class="extra-info"> Conservation status: <%= @captured_bird.conservation_status.capitalize!() %> </h5> 
+                <h5 class="extra-info"> Where can I find it?  <%= @captured_bird.habitat.capitalize() %> </h5> 
+                <h5 class="extra-info"> <%= @captured_bird.description %> </h5> 
               </div>
 
             <%# </div> %>
