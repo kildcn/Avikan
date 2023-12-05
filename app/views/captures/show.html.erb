@@ -1,3 +1,26 @@
 <h1>You captured this bird!</h1>
 
-<%= cl_image_tag @new_capture.photo.key, height: 300, width: 400, crop: :fill %>
+<%# <%= cl_image_tag @new_capture.photo.key, height: 300, width: 400, crop: :fill %> %>
+
+<% if @new_capture.nil?%>
+<% %>
+
+
+
+
+
+
+
+<div class="bird_info_small_card">
+  <h3 class= ""> <%= @new_capture.bird.common_location%> </h3>
+  <h1 class= ""> <%= @new_capture.bird.common_name%> </h1>
+
+  <div class="bird_stats">
+    <div class="weigth"> <%= @new_capture.bird.weigth%> </div>
+    <div class="bird-size"> <%= @new_capture.bird.bird_size%> </div>
+    <div class="migrates"> <%= @new_capture.bird.migrates%> </div>
+    <div class="habitat"> <%= @new_capture.bird.habitat%> </div>
+    <div class="diet"> <%= @new_capture.bird.diet%> </div>
+    <div class="btn btn-primary"></div>
+  </div>
+</div>

@@ -19,14 +19,15 @@
   </head>
   <body>
     <%= render "shared/navbar" %>
-    <% if params[:controller] == "pages" && params[:action] == "home" %>
+    <% if (params[:controller] == "captures" && params[:action] == "reward")   %>
 
-    <div class="container" style="width:90%">
-      <%= yield %>
+    <div class="custom-container">
+        <%= yield %>
     </div>
     <% else %>
-     <div class="container" style="width:90%">
-      <%= yield %>
+
+  <div class="container" style="width:90%">
+        <%= yield %>
     </div>
     <% end %>
     <%= render "shared/flashes" %>
