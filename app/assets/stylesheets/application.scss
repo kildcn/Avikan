@@ -46,5 +46,8 @@ body {
 
 .custom-container{
   width: 100vw;
-  height: 100vh;
+}
+
+.full-height{
+  height: calc(100vh - 80px);
 }

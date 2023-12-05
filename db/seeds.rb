@@ -53,7 +53,7 @@ User.create!(
   password: '123456',
   date_joined: Date.today,
   avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
-  user_xp: 1700
+  user_xp: 400
 )
 
 puts "Created #{User.count} Users 🤷🏽 🙋🏻‍♀️ 💃🏼 👨🏼‍🌾"
@@ -181,7 +181,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/eurasian_nuthatch.mp3",
   weight: 23,
- 
+
 )
 
 Bird.create(
@@ -200,7 +200,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/common_chaffinch.mp3",
   weight: 28,
- 
+
 )
 
 Bird.create(
@@ -219,7 +219,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/common_wood_pigeon.mp3",
   weight: 500,
- 
+
 )
 
 Bird.create(
@@ -257,7 +257,7 @@ Bird.create(
   rarity: "Common",
   sound_url: "https://example.com/sound/eurasian_magpie.mp3",
   weight: 200,
- 
+
 )
 
 puts "Bird seeds created: #{Bird.count} 🐣"
