@@ -8,8 +8,9 @@
 .information-holder {
   display: flex;
   align-items: flex-end;
-  height: 95vh;
+  height: calc(100vh - 80px);
   position: relative;
+  padding-bottom: 15px;
 }
 
 .bird_stats {
@@ -36,7 +37,7 @@
 
 .expand-info-button {
   position: absolute;
-  bottom: 8px;
+  bottom: 15px;
   right:12%;
   border-radius: 50%;
   height: 40px;

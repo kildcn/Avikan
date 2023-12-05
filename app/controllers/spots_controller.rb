@@ -1,7 +1,9 @@
 class SpotsController < ApplicationController
 
   def index
-    if params[:view] == 'my_spots'
+
+    @is_my_spots = params[:view] == 'my_spots'
+    if @is_my_spots
     # Show only the spots belonging to the current user
     @spots = Spot.where(user_id: current_user.id)
     else

@@ -4,6 +4,11 @@
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
   <div class="a-container">
-    <%= link_to 'My Spots', spots_path(view: 'my_spots') %>
-    <%= link_to 'All Spots', spots_path %>
+    <% if @is_my_spots %>
+      <%= link_to 'My Spots', spots_path(view: 'my_spots'), class: "spot-inactive" %>
+      <%= link_to 'All Spots', spots_path %>
+    <% else %>
+      <%= link_to 'My Spots', spots_path(view: 'my_spots') %>
+      <%= link_to 'All Spots', spots_path, class: "spot-inactive" %>
+    <% end %>
 </div>
