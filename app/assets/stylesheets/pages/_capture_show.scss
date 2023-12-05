@@ -22,8 +22,6 @@
   flex-direction: row;
   .mini-card{
     margin-right: 40px;
-    
-
   }
 }
 
@@ -46,12 +44,24 @@
   font-size: 24px;
   padding: 1px;
   color: $yellow;
-  background-color: rgba(167, 167, 167, 0.315);
+  background-color: rgba(167, 167, 167, 0.151);
   border: solid 1px $yellow;
 }
 
+.bird-card{
+  background-color: rgba(61, 61, 61, 0.568);
+  border-top-right-radius: 64px;
+  border-top-left-radius: 64px;
+  margin-left: -12px;
+  margin-right: -12px;
+  margin-bottom: -40px;
+  padding-top: 40px;
+}
+
 #aditional-info{
-  .extra-info {
+  p.extra-info {
     color: white;
+    font-weight: 900;
+    margin-bottom: 14px;
   }
 }
