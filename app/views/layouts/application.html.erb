@@ -16,24 +16,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@200&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
- 
   </head>
   <body>
     <%= render "shared/navbar" %>
-    <% if (params[:controller] == "captures" && params[:action] == "reward") || (params[:controller] == "captures" && params[:action] == "show") %>
-
-      <div class="custom-container">
-      <div class="pt-4">
-          <%= yield %>
-          </div>
-      </div>
+    <% if (params[:controller] == "captures" && params[:action] == "reward") || (params[:controller] == "captures" && params[:action] == "show") || params[:controller] == "spots"%>
+        <div class="custom-container full-height">
+            <%= yield %>
+        </div>
       <% else %>
-
-  <div class="container" style="width:90%">
-   <div class="pt-4">
-        <%= yield %>
-         </div>
-    </div>
+        <div class="container full-height" style="width:90%">
+          <%= yield %>
+        </div>
     <% end %>
     <%= render "shared/flashes" %>
   </body>
