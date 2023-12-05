@@ -2,20 +2,21 @@
 style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @captured_bird.photo.key %>')"
 >
 <div class="container">
-  <div class=information-holder>
+  <div class="information-holder" data-controller="more-info-button">
 
-      <div class="bird_info_small_card">
-        <h3 class= ""> <%= @captured_bird.common_location%> </h3>
-        <h1 class= ""> <%= @captured_bird.common_name%> </h1>
+      <div class="bird_info_small_card px-4" data-more-info-button-target="birdinfo">
+      
+        <h3 class= ""> <%= @captured_bird.common_location.capitalize!()%> </h3>
+        <h1 class= ""> <%= @captured_bird.common_name.capitalize!()%> </h1>
         <div class="bird_stats">
           <div class="info-row">
 
-            <div class="mini-card">Weight
+            <div class="mini-card">Weight:
               <div> <%= @captured_bird.weight%> </div>
             </div>
             
-            <div class="mini-card">Size
-              <div> <%= @captured_bird.bird_size%> </div>
+            <div class="mini-card">Size:
+              <div> <%= @captured_bird.bird_size.capitalize!()%> </div>
             </div>
           
             <div class="mini-card">Migratory?
@@ -25,32 +26,32 @@ style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(
           </div>
 
           <div class="info-row mt-4">
-            <div class="mini-card">Habit<div> <%= @captured_bird.bird_habitat_type%> </div></div>
-            <div class="mini-card">Diet<div> <%= @captured_bird.diet%> </div></div>
+            <div class="mini-card">Habitat:<div> <%= @captured_bird.bird_habitat_type.capitalize!()%> </div></div>
+            <div class="mini-card">Diet:<div> <%= @captured_bird.diet.capitalize!()%> </div></div>
         </div>
 
-            <div class="" data-controller="more-info-button">
+            <%# <div class="" data-controller="more-info-button"> %>
               
-              <button class="expand-info-button" 
+              <button class="expand-info-button inactive" 
               data-action="click->more-info-button#more"
-              data-more-info-button-target="plusbutton"> + 
+              data-more-info-button-target="plusbutton">
+              <i class="fa-solid fa-plus" style="color: #fcca49;"></i>
               </button>
 
-              <div id="aditional-info" class="d-none" data-more-info-button-target="extrainfo">
-                <p class="extra-info"> Scientific name: <%= @captured_bird.scientific_name %> </p> 
-                <p class="extra-info"> Conservation status: <%= @captured_bird.conservation_status %> </p> 
-                <p class="extra-info"> Where can I find it?  <%= @captured_bird.habitat %> </p> 
-                <p class="extra-info"> Description: <%= @captured_bird.description %> </p> 
-
+              <div id="aditional-info" class="d-none my-4" data-more-info-button-target="extrainfo">
+                <p class="extra-info"> Scientific name: <%= @captured_bird.scientific_name.capitalize!() %> </p> 
+                <p class="extra-info"> Conservation status: <%= @captured_bird.conservation_status.capitalize!() %> </p> 
+                <p class="extra-info"> Where can I find it?  <%= @captured_bird.habitat.capitalize() %> </p> 
+                <p class="extra-info"> <%= @captured_bird.description %> </p> 
               </div>
-            
-            </div>
-        
+
+            <%# </div> %>
+
         </div>  
-      
+
       </div>
 
     </div>  
-  
+
   </div>
 </div>  
