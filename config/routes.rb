@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get "new", to: "captures#new"
   post '/upload_image', to: 'captures#new'
+  get "/error", to: 'pages#error'
   root to: "pages#home"
 
   resources :captures, only: [:index, :new, :create, :show] do

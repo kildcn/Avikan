@@ -15,6 +15,10 @@ class PagesController < ApplicationController
     @global_top_3 = User.order(user_xp: :desc).limit(3)
   end
 
+  def error
+    
+  end
+
   private
 
   def set_user
