@@ -4,15 +4,23 @@ import { CountUp } from 'countup.js';
 // Connects to data-controller="counter"
 export default class extends Controller {
   static values = {
-    total: Number,
+    scoredpoints: Number,
     userpoints: Number
   }
 
-  static targets = ["totalpoints"]
+  static targets = ["rewardpoints", "totalpoints"]
 
   connect() {
-    console.log(this.totalValue, this.userpointsValue)
-    const countUp = new CountUp(this.totalpointsTarget, 5234);
+
+    const countUp = new CountUp(this.rewardpointsTarget, this.scoredpointsValue, { duration: 10});
     countUp.start();
+
+
+    const countUpdeux = new CountUp(this.totalpointsTarget, this.userpointsValue, { duration: 5 });
+    setTimeout(() => {
+
+      countUpdeux.start();
+    }, 2500);
+
   }
 }
