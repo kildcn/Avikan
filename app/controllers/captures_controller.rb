@@ -20,7 +20,6 @@ class CapturesController < ApplicationController
   def create
     @image = params[:capture][:image]
 
-
     endpoint = "http://164.68.99.217:8000/upload_image"
 
     response = HTTParty.post(
@@ -34,10 +33,6 @@ class CapturesController < ApplicationController
 
       })
     @bird_hash = JSON.parse(response.body)
-    p @image
-    p "💭💭💭💭💭💭💭💭"
-
-
 
 #     @bird_hash = {
 #   "status"=> "ok",
@@ -149,7 +144,6 @@ class CapturesController < ApplicationController
   def first
     @capture = Capture.find(params[:id])
     @captured_bird = @capture.bird
-
   end
 
   def search
@@ -184,7 +178,6 @@ class CapturesController < ApplicationController
   end
 
   def reward
-
     @capture = Capture.find(params[:id])
     @captured_bird = @capture.bird
 
