@@ -20,6 +20,15 @@ class User < ApplicationRecord
         { xp_threshold: 1000, name: "Yes yes yes, ten birds, champ!", badge_img: "URL" },
         { xp_threshold: 2000, name: "Yes yes yes, 20 birds, OMGGGG!", badge_img: "URL" },
       ]
+    elsif self.user_xp >= 1500
+      [
+        { xp_threshold: 100, name: "First bird!!! 🦜", badge_img: "URL" },
+        { xp_threshold: 200, name: "Whuuu, second bird!", badge_img: "URL" },
+        { xp_threshold: 300, name: "Whuuu, third bird!", badge_img: "URL" },
+        { xp_threshold: 500, name: "Yeehaaa, five birds, champ!", badge_img: "URL" },
+        { xp_threshold: 1000, name: "Yes yes yes, ten birds, champ!", badge_img: "URL" },
+        { xp_threshold: 2000, name: "Yes yes yes, 20 birds, OMGGGG!", badge_img: "URL" },
+      ]
     elsif self.user_xp >= 1200
       [
         { xp_threshold: 100, name: "First bird!!! 🦜", badge_img: "URL" },
