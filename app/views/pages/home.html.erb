@@ -5,9 +5,13 @@
   <% else %>
     <h1 class="display-1">Welcome Guest</h1>
   <% end %>
+    <% if user_signed_in? %>
     <%= link_to user_badges_path(current_user)  do%>
     <%= image_tag "user.webp" %>
     <% end %>
+
+    <% end %>
+
   </div>
   <h5 class="mt-2" style="font-weight:300;"><span style="color:#fcca49;">Level</span> DAVID ATTENBOROUGH</h5>
 </div>
