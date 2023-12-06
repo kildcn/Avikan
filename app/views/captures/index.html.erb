@@ -2,8 +2,6 @@
 <h3 class="header-font animated fadeIn" style="margin:0;padding:0;color:#fcca49;"><%= current_user.username.upcase %>'S</h3>
 <h1 class="display-1 mb-2 animated fadeIn">FLOCK</h1>
 
-
-
   <div class="row justify-content-center mb-4">
     <div class="col-sm-8 my-3">
       <%= form_with url: captures_path, method: :get, html:{ class: "d-flex"}, data:{ action:"keyup->search-birds#search" } do %>
