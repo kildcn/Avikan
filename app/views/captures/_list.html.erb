@@ -1,13 +1,13 @@
 <% @captures.each do |capture| %>
-    <% if capture.bird.photo.attached? %>
-      <div class="bird_card mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path capture.bird.photo.key %>')">
-      <p><%= capture.bird.common_name %></p>
-      </div>
-      
-      <% else %>
-      <div class="bird_card mb-4" style="border: 1px solid white;">
-        <h2>No Bird Picture Attached</h2>
-        <p><%= capture.bird.common_name %></p>
-      </div>
-      <% end %>
-    <% end %>
+  <% if capture.bird.photo.attached? %>
+    <div class="bird_card mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path capture.bird.photo.key %>')">
+      <h3 class="bird-common-name"><%= capture.bird.common_name %></h3>
+    </div>
+    
+  <% else %>
+    <div class="bird_card no_picture mb-4">
+      <p class="no-pic">No Bird Picture Attached</p>
+      <h3 class="bird-common-name"><%= capture.bird.common_name %></h3>
+    </div>
+  <% end %>
+<% end %>
