@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get "new", to: "captures#new"
   post '/upload_image', to: 'captures#new'
+  get "/error", to: 'pages#error'
   root to: "pages#home"
 
   resources :captures, only: [:index, :new, :create, :show] do
@@ -13,14 +14,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :pages, only: [:leaderboard, :map] do
-  #   member do
-  #     get :badges, on: :member
-  #     # get :badges, to: 'pages#badges', as: 'badges'
-  #     # get :badges, to: 'pages#user_badges', as: 'user_badges'
-  #   end
-  # end
-
   resources :pages, only: [:leaderboard, :map]
 
   get '/birds/index', to: 'birds#index'
@@ -28,7 +21,8 @@ Rails.application.routes.draw do
   get '/pages/map', to: 'pages#map'
 
   get '/badges/:id', to: 'pages#badges', as: 'user_badges'
-  # get '/pages/badges/:id', to: 'pages#badges', as: 'badge'
+
+  get '/badges', to: 'pages#badges', as: 'badges'
 
   get '/pages/leaderboard', to: 'pages#leaderboard'
 

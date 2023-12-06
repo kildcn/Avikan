@@ -16,39 +16,23 @@
   color: #FCCA49;
 }
 
-h2 {
+.pixel-yellow {
   color: #FCCA49;
   font-family: 'Pixelify Sans', sans-serif; // Sets the color of H1, H2, and H3 headings to a gold-like color
 }
 
-// a { /* Yellow background */
-//   color: white; /* Text color */
-//   text-align: center;
-//   padding: 10px 20px; /* Padding for button size */
-//   margin: 5px; /* Space between buttons */
-//   text-decoration: none; /* Removes underline from links */
-//   border: 1px solid #FCCA49;; /* Optional border */
-//   border-radius: 5px; /* Rounded corners */
-// }
+.normal-yellow {
+  color: #FCCA49;
+}
 
-/* Optional: Hover effect for buttons */
+.normal-white {
+  color: #ffffff;
+}
 
 .a-container {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.A1 {
-  .btn1 { /* Yellow background */
-    color: white; /* Text color */
-    text-align: center;
-    padding: 10px 20px; /* Padding for button size */
-    margin: 5px; /* Space between buttons */
-    text-decoration: none; /* Removes underline from links */
-    border: 1px solid #FCCA49;; /* Optional border */
-    border-radius: 5px; /* Rounded corners */
-  }
 }
 
 .a-container {
@@ -60,7 +44,7 @@ h2 {
     color: white; /* Text color */
     text-align: center;
     padding: 10px 20px; /* Padding for button size */
-    margin: 5px; /* Space between buttons */
+    margin-top: 20px; /* Space between buttons */
     text-decoration: none; /* Removes underline from links */
     border: 1px solid #FCCA49;; /* Optional border */
     border-radius: 5px;
@@ -82,4 +66,47 @@ h2 {
     color: #FCCA49;
     height: 40%;
   }
+}
+
+.custom-pop {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 24px;
+  // --bs-gutter-x: 0rem;
+}
+
+.mapboxgl-canvas {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.a-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.toggle-button {
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-decoration: none;
+  border: 1px solid #FCCA49;
+  border-radius: 5px;
+  background-color: #FCCA49;
+}
+
+.hidden {
+  display: none;
+}
+
+#all_spots_link {
+  display: none;
+}
+
+.spot-inactive {
+  display: none !important;
 }

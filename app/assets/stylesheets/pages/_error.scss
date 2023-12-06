@@ -1,0 +1,19 @@
+.error-container {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.shortcuts-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 50%;
+  gap: 60px;
+  padding: 5px;
+}
+
+.icon-wrapper {
+  text-align: center;
+}

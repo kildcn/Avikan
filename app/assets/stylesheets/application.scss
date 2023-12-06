@@ -46,5 +46,13 @@ body {
 
 .custom-container{
   width: 100vw;
-  height: 100vh;
+}
+
+.full-height{
+  height: calc(100vh - 80px);
+}
+
+.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+  --bs-gutter-x: [your-desired-value];
+  --bs-gutter-y: [your-desired-value];
 }

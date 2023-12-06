@@ -1,8 +1,14 @@
-<div style="width: 100%; height: 600px;"
+<div style="height: 700px;" class="container-fluid"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
   <div class="a-container">
-      <%= link_to 'My Spots', spots_path(view: 'my_spots') %>
+    <% if @is_my_spots %>
+      <%= link_to 'My Spots', spots_path(view: 'my_spots'), class: "spot-inactive" %>
       <%= link_to 'All Spots', spots_path %>
+    <% else %>
+      <%= link_to 'My Spots', spots_path(view: 'my_spots') %>
+      <%= link_to 'All Spots', spots_path, class: "spot-inactive" %>
+    <% end %>
 </div>
