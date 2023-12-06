@@ -1,0 +1,29 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 50px;
+}
+
+.shortcuts-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px;
+  padding: 30px;
+}
+.back, .another-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 24px;
+  text-align: center;
+  color: blue;
+}
+
+.back{
+  background-color: red;
+}
+
+.another-photo {
+  background-color: green;
+}
