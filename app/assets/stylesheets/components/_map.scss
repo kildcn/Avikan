@@ -73,11 +73,12 @@
   background-position: center;
   background-size: cover;
   border-radius: 24px;
+  // --bs-gutter-x: 0rem;
 }
 
 .mapboxgl-canvas {
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 .a-container {
