@@ -18,3 +18,40 @@ legend ~ div.form-check:first-of-type {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.emoji {
+  font-size: 20pt;
+  margin-right: 15px;
+}
+
+.container.full-height {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.leaderboard-container ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+.leaderboard-container li {
+  margin-bottom: 10px;
+}
+
+.leaderboard-container li a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.leaderboard-container li a:hover,
+.leaderboard-container li a:focus {
+  color: #FCCA49;
+}
+
+.leaderboard-container li a:hover,
+.leaderboard-container li a:focus {
+  font-size: 1.2em;
+}
