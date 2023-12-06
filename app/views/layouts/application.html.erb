@@ -17,7 +17,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@200&family=Pixelify+Sans:wght@400;500&display=swap" rel="stylesheet">
   </head>
+
   <body>
+
+  <% if params[:controller] == "spots" %>
+  <%= link_to :back do %>
+    <%= image_tag "return.png", class: "return" %>
+  <% end %>
+<% else %>
+  <%= link_to :back do %>
+    <%= image_tag "return.png", class: "d-none" %>
+  <% end %>
+<% end %>
+
+
     <%= render "shared/navbar" %>
     <% if (params[:controller] == "captures" && params[:action] == "reward") || (params[:controller] == "captures" && params[:action] == "show") || params[:controller] == "spots"%>
         <div class="custom-container full-height">

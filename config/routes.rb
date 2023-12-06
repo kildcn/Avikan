@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  delete '/users/sign_out', to: 'devise/sessions#destroy'
+
+
   get "up" => "rails/health#show", as: :rails_health_check
   get "new", to: "captures#new"
   post '/upload_image', to: 'captures#new'

@@ -39,20 +39,35 @@ body {
   }
 }
 
-.header-font{
+.header-font {
   color: #FCCA49;
   font-family: 'Pixelify Sans', sans-serif;
 }
 
-.custom-container{
+.custom-container {
   width: 100vw;
 }
 
-.full-height{
+.full-height {
   height: calc(100vh - 80px);
 }
 
-.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
-  --bs-gutter-x: [your-desired-value];
-  --bs-gutter-y: [your-desired-value];
+.d-none {
+  display: none;
+}
+
+.return {
+  position: relative;
+  top: 0px;
+  height: 28px !important; /* Set your desired height */
+  background-image: url('https://i.ibb.co/Qf1cHDS/return.png') !important; /* Path to your background image */
+  background-size: contain; /* Ensures the background covers the whole element *//* Text color */
+  color: #fcc94900 !important;
+  background-repeat: no-repeat;
+  margin: 10px;
+  z-index: 10;
+}
+
+.home-image {
+  margin-top: 10px;
 }

@@ -1,10 +1,17 @@
 class CapturesController < ApplicationController
+  # skip_before_action :verify_authenticity_token, only: [:index]
 
   def index
-    if params[:query]
+    if params[:query].present?
+      # @captures = Capture.where(user: current_user)
       @captures = Capture.global_capture_bird_search(params[:query]).where(user: current_user)
     else
       @captures = Capture.where(user: current_user)
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "captures/list", locals: {captures: @captures}, formats: [:html] }
     end
   end
 

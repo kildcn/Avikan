@@ -1,30 +1,22 @@
+<div data-controller="search-birds" data-search-birds-url-value = "<%= request.base_url%>">
 <h3 class="header-font animated fadeIn" style="margin:0;padding:0;color:#fcca49;"><%= current_user.username.upcase %>'S</h3>
 <h1 class="display-1 mb-2 animated fadeIn">FLOCK</h1>
 
 <div class="row justify-content-center mb-4 border: 3px double">
   <div class="col-sm-8 my-3">
-    <%= form_with url: captures_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
+      <%= form_with url: captures_path, method: :get, html:{ class: "d-flex"}, data:{ action:"keyup->search-birds#search" } do %>
+        <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
+            placeholder: "Search for a bird, habitat..."
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div data-search-birds-target="results">
+      <%= render "list", captures: @captures  %>
+    </div>
   </div>
 </div>
-
-<% @captures.each do |capture| %>
-<% if capture.bird.photo.attached? %>
-    <div class="bird_card mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path capture.bird.photo.key %>')">
-    <p><%= capture.bird.common_name %></p>
-
-  </div>
-  <% else %>
-  <div class="bird_card mb-4" style="border: 1px solid white;">
-    <h2>No Bird Picture Attached</h2>
-    <p><%= capture.bird.common_name %></p>
-  </div>
-<% end %>
-
-<% end %>
