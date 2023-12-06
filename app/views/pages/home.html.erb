@@ -1,4 +1,4 @@
-<div class="home-top">
+<div class="home-top" style="padding: 20px; margin: 20px;">
   <div class="d-flex justify-content-between">
     <% if user_signed_in? %>
     <h1 class="display-1">Welcome <br> <%= current_user.username %></h1>
@@ -6,7 +6,7 @@
     <h1 class="display-1">Welcome Guest</h1>
   <% end %>
     <%= link_to user_badges_path(current_user)  do%>
-    <%= image_tag "user.webp" %>
+    <%= image_tag "user.webp", class:"home-image" %>
     <% end %>
   </div>
   <h5 class="mt-2" style="font-weight:300;"><span style="color:#fcca49;">Level</span> DAVID ATTENBOROUGH</h5>

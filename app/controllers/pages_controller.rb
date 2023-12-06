@@ -12,11 +12,11 @@ class PagesController < ApplicationController
   end
 
   def leaderboard
-    @global_top_3 = User.order(user_xp: :desc).limit(3)
+    @global_top = User.order(user_xp: :desc).limit(5)
   end
 
   def error
-    
+
   end
 
   private
