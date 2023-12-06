@@ -1,13 +1,12 @@
 <h1 class="display-1 mb-2 animated fadeIn">BADGES</h1>
 
 <div class="badge-grid">
-
-    <% @user.create_badges.each do |badge| %>
-      <div class="mb-4 badge <%= 'unlocked' if badge[:unlocked] %>">
-        <%= image_tag badge[:badge_img] %>
-        <h2><%= badge[:name] %></h2>
-        <% unless badge[:unlocked] %>
-        <% end %>
-      </div>
-    <% end %>
+  <% @user.create_badges.each do |badge| %>
+    <div class="mb-4 badge" style="background-color: <%= badge[:unlocked] ?  "#dcb552" : "#6e6e6e" %>; filter: <%= badge[:unlocked] ? '' : 'blur(10px);' %>">
+      <%= image_tag badge[:badge_img] %>
+        <h6><%= badge[:name] %></h6>
+      <% unless badge[:unlocked] %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
