@@ -4,7 +4,7 @@
 <div class="leaderboard-container">
   <ol>
     <% @global_top.each_with_index do |user, index| %>
-    <% emoji = ["🥨", "⚜️", "🍐"][index] %>
+    <% emoji = ["🥇", "🥈", "🥉", "🐣", "🥚"][index] %>
     <li><span class="emoji"><%= emoji %></span><%= link_to "#{user.username} -  #{user.user_xp} xp", user_badges_path(user) %></li>
     <% end %>
   </ol>
