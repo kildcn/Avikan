@@ -41,6 +41,8 @@ class CapturesController < ApplicationController
       })
     @bird_hash = JSON.parse(response.body)
 
+
+
     if @bird_hash["bird_detected"]
 
       @bird_scientific_name = @bird_hash["first_likely_bird_species"]["scientific_name"]

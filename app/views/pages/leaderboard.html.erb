@@ -1,11 +1,31 @@
-<h1 class="display-1 mb-5 animated fadeIn">Global Leaderboard</h1>
+<div class="leaderboard-wrapper">
+  <div class="container">
+  <h1 class="display-1 mb-5 animated fadeIn pt-4">Global Leaderboard</h1>
 
+    <div class="leaderboard-container">
+      <ol>
+        <% @global_top.each_with_index do |user, index| %>
+        <% emoji = ["🥇", "🥈", "🥉", "🐣", "🥚"][index] %>
+        <li>
 
-<div class="leaderboard-container">
-  <ol>
-    <% @global_top.each_with_index do |user, index| %>
-    <% emoji = ["🥇", "🥈", "🥉", "🐣", "🥚"][index] %>
-    <li><span class="emoji"><%= emoji %></span><%= link_to "#{user.username} -  #{user.user_xp} xp", user_badges_path(user) %></li>
-    <% end %>
-  </ol>
+        <div style="display:flex; align-items:center;">
+          <div style="width:15%">
+          <span class="emoji"><%= emoji %></span>
+          </div>
+          <div style="width:60%; position:relative; top:11px">
+          <h5 style="font-weight:300;">
+          <%= link_to "#{user.username}", user_badges_path(user), style:"font-weight:300;" %>
+          </h5>
+          </div>
+          <div style="width:30%; position:relative; top:11px">
+          <h5 style="font-weight:300;"><%= user.user_xp %> pts</h5>
+          </div>
+        </div>
+        </li>
+        <hr>
+        <% end %>
+      </ol>
+    </div>
+  </div>
+
 </div>
