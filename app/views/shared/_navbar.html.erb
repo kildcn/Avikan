@@ -1,11 +1,16 @@
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
-
 <div class="bottom-navbar">
-    <a href="/" class="nav-button 3">home</a>
-    <a href="/captures/new" class="nav-button 2">Camera</a>
-    <%= link_to "return", :back %>
+
+    <%= link_to root_path, class:"navicon" do %>
+      <%= image_tag "home.png", class:"navicon" %>
+    <% end %>
+
+    <%= link_to new_capture_path, class:"navicon-2" do %>
+      <%= image_tag "camera.png", class:"navicon-2" %>
+    <% end %>
+
+    <%= link_to user_badges_path(current_user), class: "navicon" do %>
+  <%= image_tag "person.png", class: "navicon" %>
+<% end %>
+
+
 </div>

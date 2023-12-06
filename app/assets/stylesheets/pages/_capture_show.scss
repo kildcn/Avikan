@@ -55,7 +55,7 @@
   border-top-right-radius: 64px;
   border-top-left-radius: 64px;
   margin-left: -12px;
-  margin-right: -12px;
+  // Needed to remove this for navbar interference: margin-right: -12px;
   margin-bottom: -40px;
   padding-top: 40px;
   padding-block-end: 50px;
