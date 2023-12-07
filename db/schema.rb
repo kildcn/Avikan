@@ -70,7 +70,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_07_104312) do
     t.string "title"
     t.text "description"
     t.string "image_url"
-    t.datetime "date"
+    t.string "avatar"
   end
 
   create_table "spots", force: :cascade do |t|
