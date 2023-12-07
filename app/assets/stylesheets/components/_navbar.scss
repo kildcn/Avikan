@@ -3,11 +3,16 @@
   bottom: -4px;
   height: 80px;
   width: 100%;
-  text-align: center;
-  border-top-right-radius: 40px;
-  border-top-left-radius: 40px;
-  border-top: 1px solid #FCCA49;
-  background: linear-gradient(to top, black, rgba(0, 0, 0, 0.64));
+  // text-align: center;
+  // border-top-right-radius: 40px;
+  // border-top-left-radius: 40px;
+  // background: linear-gradient(to top, black, rgba(0, 0, 0, 0.64));
+  border-top: 2px solid #f7c546;
+  background-color: #060606;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 10;
 }
 
 // .nav-button {
@@ -24,16 +29,16 @@
 .navicon {
   height: 40px;
   text-decoration: none;
-  margin-left: 20px;
-  margin-right: 20px;
   position: relative;
-  margin-top: 10px;
+
 }
 
 .navicon-2 {
-  height: 52px;
+  height: 40px;
   text-decoration: none;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 10px;
+}
+
+#query{
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
