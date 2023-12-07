@@ -135,7 +135,25 @@ class User < ApplicationRecord
         { xp_threshold: 300, name: "Collector",badge_img: "badges/first.png",  unlocked: false },
         { xp_threshold: 500, name: "Master", badge_img: "badges/first.png",  unlocked: false },
         { xp_threshold: 1000, name: "Aficionado", badge_img: "badges/first.png", unlocked: false },
+        { xp_threshold: 2000, name: "Expert", badge_img: "badges/first.png", unlocked: false }
+      ]
+    else
+      [
+        { xp_threshold: 100, name: "Birdwatcher", badge_img: "badges/first.png", unlocked: false },
+        { xp_threshold: 200, name: "Enthusiast", badge_img: "badges/first.png", unlocked: false },
+        { xp_threshold: 300, name: "Collector",badge_img: "badges/first.png",  unlocked: false },
+        { xp_threshold: 500, name: "Master", badge_img: "badges/first.png",  unlocked: false },
+        { xp_threshold: 1000, name: "Aficionado", badge_img: "badges/first.png", unlocked: false },
         { xp_threshold: 2000, name: "Expert", badge_img: "badges/first.png", unlocked: false },
+
+        { xp_threshold: 300, name: "Collector",badge_img: "badges/first.png",  unlocked: false },
+        { xp_threshold: 500, name: "Master", badge_img: "badges/first.png",  unlocked: false },
+        { xp_threshold: 1000, name: "Aficionado", badge_img: "badges/first.png", unlocked: false },
+        { xp_threshold: 2000, name: "Expert", badge_img: "badges/first.png", unlocked: false },
+        { xp_threshold: 300, name: "Collector",badge_img: "badges/first.png",  unlocked: false },
+        { xp_threshold: 500, name: "Master", badge_img: "badges/first.png",  unlocked: false },
+        { xp_threshold: 1000, name: "Aficionado", badge_img: "badges/first.png", unlocked: false },
+        { xp_threshold: 2000, name: "Expert", badge_img: "badges/first.png", unlocked: false }
       ]
     end
   end
