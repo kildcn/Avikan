@@ -37,9 +37,10 @@ class CapturesController < ApplicationController
       },
       headers: {
         accept: "application/json"
-
       })
     @bird_hash = JSON.parse(response.body)
+
+
 
     if @bird_hash["bird_detected"]
 

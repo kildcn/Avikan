@@ -71,3 +71,21 @@ body {
 .home-image {
   margin-top: 10px;
 }
+
+.icon-tabler{
+  stroke: #fcca49;
+}
+
+.back-button{
+  height: 60px;
+  width: 60px;
+  background-color: gray;
+  border-radius: 50%;
+  text-decoration: none;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+    top: 30px;
+}

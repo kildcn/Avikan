@@ -2,6 +2,11 @@
 style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @captured_bird.photo.key %>')"
 >
 <div class="container">
+  <%= link_to  captures_path, style: "text-decoration:none"  do %>
+  <div class="back-button">
+   <i class="fa-solid fa-arrow-left" style="color:white;"></i>
+   </div>
+  <% end %>
   <div class="information-holder" data-controller="more-info-button">
 
       <div class="bird_info_small_card px-4" data-more-info-button-target="birdinfo">
@@ -28,6 +33,7 @@ style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(
           <div class="info-row mt-4">
             <div class="mini-card">Habitat:<div> <%= @captured_bird.bird_habitat_type.capitalize!()%> </div></div>
             <div class="mini-card">Diet:<div> <%= @captured_bird.diet.capitalize!()%> </div></div>
+                        <div class="mini-card">Diet:<div> <%= @captured_bird.diet.capitalize!()%> </div></div>
         </div>
 
             <%# <div class="" data-controller="more-info-button"> %>
@@ -53,5 +59,4 @@ style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(
 
     </div>
 
-  </div>
 </div>
