@@ -8,7 +8,7 @@
 .information-holder {
   display: flex;
   align-items: flex-end;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 130px);
   position: relative;
   padding-bottom: 15px;
 }
@@ -37,7 +37,7 @@
 
 .expand-info-button {
   position: absolute;
-  bottom: 8px;
+  bottom: 57px;
   right:5%;
 
   border-radius: 50%;
@@ -51,14 +51,15 @@
 }
 
 .bird-card{
-  background-color: rgba(61, 61, 61, 0.568);
+background-color: rgba(61, 61, 61, 0.568);
   border-top-right-radius: 64px;
   border-top-left-radius: 64px;
   margin-left: -12px;
-  // Needed to remove this for navbar interference: margin-right: -12px;
-  margin-bottom: -40px;
+  margin-bottom: -55px !important;
   padding-top: 40px;
   padding-block-end: 50px;
+  /*! width: 412px; */
+  margin-right: -12px;
 }
 
 
