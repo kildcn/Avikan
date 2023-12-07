@@ -37,7 +37,6 @@ class CapturesController < ApplicationController
       },
       headers: {
         accept: "application/json"
-
       })
     @bird_hash = JSON.parse(response.body)
 
