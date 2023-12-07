@@ -15,10 +15,13 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :username,
+                required: true,
+                input_html: { autocomplete: "username" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: "btn text-white" %>
   </div>
 <% end %>
 
