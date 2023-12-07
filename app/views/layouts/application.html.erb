@@ -38,11 +38,15 @@
     <%= render "shared/navbar" %>
     <% if (params[:controller] == "captures" && params[:action] == "reward") || (params[:controller] == "captures" && params[:action] == "show") || params[:controller] == "spots" || (params[:controller] == "pages" && params[:action] == "leaderboard") %>
         <div class="custom-container">
+
             <%= yield %>
+
         </div>
       <% else %>
         <div class="container" style="width:90%">
+
           <%= yield %>
+
         </div>
     <% end %>
     <%= render "shared/flashes" %>

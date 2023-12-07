@@ -1,19 +1,37 @@
 <div class="bottom-navbar pb-2">
     <%= link_to root_path, class:"navicon" do %>
-      <%= image_tag "home.png", class:"navicon" %>
+    <% if params[:controller] == "pages" && params[:action] == "home" %>
+       <i class="fa-solid fa-house" style="color:white;"></i>
+       <% else %>
+       <i class="fa-solid fa-house" style="color:#ffdc4f;"></i>
     <% end %>
 
-    <%= link_to new_capture_path, class:"navicon-2" do %>
-      <%= image_tag "camera.png", class:"navicon-2" %>
+      <%# <%= image_tag "home.png", class:"navicon" %>
+    <% end %>
+
+    <%= link_to new_capture_path, class:"navicon" do %>
+     <% if params[:controller] == "captures" && params[:action] == "new"  %>
+      <i class="fa-solid fa-camera" style="color:white;"></i>
+       <% else %>
+       <i class="fa-solid fa-camera" style="color:#ffdc4f;"></i>
+      <%# <%= image_tag "camera.png", class:"navicon-2" %>
+      <% end %>
     <% end %>
 
     <% if user_signed_in? %>
       <%= link_to user_badges_path(current_user), class: "navicon" do %>
-        <%= image_tag "person.png", class: "navicon" %>
+      <% if params[:controller] == "pages" && params[:action] == "badges"  %>
+      <i class="fa-solid fa-user" style="color:white;"></i>
+       <% else %>
+       <i class="fa-solid fa-user" style="color:#ffdc4f;"></i>
+      <%# <%= image_tag "camera.png", class:"navicon-2" %>
+      <% end %>
+        <%# <%= image_tag "person.png", class: "navicon" %>
       <% end %>
     <% else %>
       <%= link_to new_user_session_path, class: "navicon" do %>
-        <%= image_tag "person.png", class: "navicon" %>
+      <i class="fa-solid fa-user" style="color:white;"></i>
+        <%# <%= image_tag "person.png", class: "navicon" %>
       <% end %>
     <% end %>
 </div>

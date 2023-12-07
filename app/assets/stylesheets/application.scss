@@ -21,6 +21,7 @@ body {
   background-color: #060606; // Sets the background color of the body to black
   color: white;
 
+
   h1 {
     color: #FCCA49;
     font-family: 'Pixelify Sans', sans-serif; // Sets the color of H1, H2, and H3 headings to a gold-like color
@@ -88,4 +89,10 @@ body {
   justify-content: center;
   position: relative;
     top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
 }

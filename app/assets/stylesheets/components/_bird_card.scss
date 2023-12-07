@@ -13,6 +13,22 @@
   }
 }
 
+.bird_card_alt{
+  background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 329px;
+    border-radius: 27px;
+    padding: 15px;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("default.jpg");
+
+    h2 {
+      position: absolute;
+      top: 60px;
+    }
+}
+
 .card-details-1 {
   display: flex;
   align-items: center;
