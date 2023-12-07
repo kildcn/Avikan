@@ -1,34 +1,27 @@
 <% @captures.each do |capture| %>
   <% spot = Spot.find_by(bird: capture.bird) %>
     <% if capture.bird.photo.attached? %>
-
       <div class="bird_card mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path capture.bird.photo.key %>')">
-      <%= link_to capture_path(capture) do %>
-      <h2 class="header-font" ><%= capture.bird.common_name %></h2>
+        <%= link_to capture_path(capture) do %>
+          <h2 class="header-font" ><%= capture.bird.common_name %></h2>
         <% end %>
-      <div class="card-details-1">
-         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-          <path d="M21 21l-6 -6" />
-          </svg>
-        <h6><%= capture.created_at.strftime("%H") %>.00 <%= capture.created_at.strftime("%d") %> <%= capture.created_at.strftime("%B") %> <%= capture.created_at.strftime("%y") %> </h6>
+          <div class="card-details-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+              <path d="M21 21l-6 -6" />
+            </svg>
+            <h6><%= capture.created_at.strftime("%d") %> <%= capture.created_at.strftime("%B") %> <%= capture.created_at.strftime("%y") %> </h6>
+          </div>
+            <div class="card-details-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag-3" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M5 14h14l-4.5 -4.5l4.5 -4.5h-14v16" />
+              </svg>
+              <h6><%= spot.nil? ?   "8.8566° N, 2.3522° E"  : "#{spot.latitude} N, #{spot.longitude}"  %> </h6>
+            </div>
       </div>
-
-      <div class="card-details-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag-3" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M5 14h14l-4.5 -4.5l4.5 -4.5h-14v16" />
-        </svg>
-
-        <h6><%= spot.nil? ?   "8.8566° N, 2.3522° E"  : "#{spot.latitude} N, #{spot.longitude}"  %> </h6>
-      </div>
-
-      </div>
-
-
-
-      <% else %>
+    <% else %>
       <div class="bird_card mb-4" style="border: 1px solid white;">
         <h2>No Bird Picture Attached</h2>
         <p><%= capture.bird.common_name %></p>
