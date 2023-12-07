@@ -8,7 +8,16 @@ User.create!(
   password: '123456',
   date_joined: Date.today,
   avatar_url: "https://kitt.lewagon.com/placeholder/users/rebeccabri",
-  user_xp: 1500
+  user_xp: 930
+)
+
+User.create!(
+  username: 'Chirag',
+  email: 'chirag@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/rebeccabri",
+  user_xp: 820
 )
 
 User.create!(
@@ -26,7 +35,7 @@ User.create!(
   password: '123456',
   date_joined: Date.today,
   avatar_url: "https://kitt.lewagon.com/placeholder/users/kildcn",
-  user_xp: 900
+  user_xp: 20
 )
 
 User.create!(
@@ -35,7 +44,7 @@ User.create!(
   password: '123456',
   date_joined: Date.today,
   avatar_url: "https://kitt.lewagon.com/placeholder/users/habidulin",
-  user_xp: 750
+  user_xp: 960
 )
 
 User.create!(
@@ -44,7 +53,7 @@ User.create!(
   password: '123456',
   date_joined: Date.today,
   avatar_url: "https://kitt.lewagon.com/placeholder/users/emmvs",
-  user_xp: 1300
+  user_xp: 800
 )
 
 User.create!(
@@ -53,7 +62,115 @@ User.create!(
   password: '123456',
   date_joined: Date.today,
   avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
-  user_xp: 400
+  user_xp: 880
+)
+
+User.create!(
+  username: 'Tristan',
+  email: 'tristan@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 920
+)
+
+User.create!(
+  username: 'Moritz',
+  email: 'moritz@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 940
+)
+
+User.create!(
+  username: 'Utsav',
+  email: 'utsav@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 910
+)
+
+User.create!(
+  username: 'Francisca',
+  email: 'francisca@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 980
+)
+
+User.create!(
+  username: 'Gang',
+  email: 'gang@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 970
+)
+
+User.create!(
+  username: 'Alex',
+  email: 'alex@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 870
+)
+
+User.create!(
+  username: 'Bruno',
+  email: 'bruno@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 1100
+)
+
+User.create!(
+  username: 'Burak',
+  email: 'burak@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 860
+)
+
+User.create!(
+  username: 'Elaine',
+  email: 'elaine@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 810
+)
+
+User.create!(
+  username: 'Maris',
+  email: 'maris@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 790
+)
+
+User.create!(
+  username: 'Victor',
+  email: 'victor@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 780
+)
+
+User.create!(
+  username: 'Puffindaddy',
+  email: 'puffindaddy@test.com',
+  password: '123456',
+  date_joined: Date.today,
+  avatar_url: "https://kitt.lewagon.com/placeholder/users/AdamTomczyk",
+  user_xp: 12
 )
 
 puts "Created #{User.count} Users 🤷🏽 🙋🏻‍♀️ 💃🏼 👨🏼‍🌾"
@@ -85,8 +202,9 @@ Bird.create(
   diet: "Insects, worms, seeds, fruits.",
   max_velocity: 30,
   rarity: "Common",
+  # image_url: "https://i.postimg.cc/ht9Sw-2RT/A01ROBIN.png",
   sound_url: "https://example.com/sound/european_robin.mp3",
-  weight: 18,
+  weight: 18
 )
 
 Bird.create(
@@ -103,9 +221,9 @@ Bird.create(
   diet: "Insects, worms, berries.",
   max_velocity: 40,
   rarity: "Common",
+  # image_url: "https://i.postimg.cc/Bv7QcXGV/A02-BLACKBIRD.png",
   sound_url: "https://example.com/sound/common_blackbird.mp3",
-  weight: 100,
-
+  weight: 100
 )
 
 Bird.create(
@@ -122,9 +240,9 @@ Bird.create(
   diet: "Insects, seeds, nuts.",
   max_velocity: 35,
   rarity: "Common",
+  # image_url: "https://i.postimg.cc/Wb0zLNMd/A03TIT.png",
   sound_url: "https://example.com/sound/great_tit.mp3",
-  weight: 20,
-
+  weight: 20
 )
 
 Bird.create(
@@ -141,9 +259,9 @@ Bird.create(
   diet: "Flying insects.",
   max_velocity: 60,
   rarity: "Common",
+  # image_url: "https://i.postimg.cc/BvnnK2RF/A04SW-AL.png",
   sound_url: "https://example.com/sound/barn_swallow.mp3",
-  weight: 19,
-
+  weight: 19
 )
 
 Bird.create(
@@ -160,9 +278,9 @@ Bird.create(
   diet: "Insects, caterpillars, seeds.",
   max_velocity: 32,
   rarity: "Common",
+  # image_url: "https://i.postimg.cc/JntC1qvT/A05BLUT.png",
   sound_url: "https://example.com/sound/eurasian_blue_tit.mp3",
-  weight: 11,
-
+  weight: 11
 )
 
 Bird.create(
@@ -179,9 +297,9 @@ Bird.create(
   diet: "Insects, nuts, seeds.",
   max_velocity: 25,
   rarity: "Common",
+  # image_url: "https://i.postimg.cc/zDb37SvS/A06NUT.png",
   sound_url: "https://example.com/sound/eurasian_nuthatch.mp3",
-  weight: 23,
-
+  weight: 23
 )
 
 Bird.create(
@@ -198,9 +316,9 @@ Bird.create(
   diet: "Insects, seeds.",
   max_velocity: 38,
   rarity: "Common",
+  # image_url: "https://i.postimg.cc/3xBwNtf7/A07CHAF.png",
   sound_url: "https://example.com/sound/common_chaffinch.mp3",
-  weight: 28,
-
+  weight: 28
 )
 
 Bird.create(
@@ -217,9 +335,9 @@ Bird.create(
   diet: "Seeds, grains, fruits.",
   max_velocity: 80,
   rarity: "Common",
+  # image_url: "https://i.postimg.cc/bY7rBD2X/A08PIG.png",
   sound_url: "https://example.com/sound/common_wood_pigeon.mp3",
-  weight: 500,
-
+  weight: 500
 )
 
 Bird.create(
@@ -236,9 +354,9 @@ Bird.create(
   diet: "Seeds, especially thistles and teasels.",
   max_velocity: 45,
   rarity: "Common",
+  # image_url: "https://i.postimg.cc/0yxQ9Tfc/A10GOLD.png",
   sound_url: "https://example.com/sound/european_goldfinch.mp3",
-  weight: 14,
-
+  weight: 14
 )
 
 Bird.create(
@@ -256,8 +374,7 @@ Bird.create(
   max_velocity: 50,
   rarity: "Common",
   sound_url: "https://example.com/sound/eurasian_magpie.mp3",
-  weight: 200,
-
+  weight: 200
 )
 
 puts "Bird seeds created: #{Bird.count} 🐣"
@@ -298,7 +415,7 @@ Spot.create!(
 
 Spot.create!(
   bird_id: 2, # Common Blackbird
-  user_id: 4, # Maksym
+  user_id: 11, # Maksym
   address: "Marienplatz, Munich",
   latitude: 48.1371079,
   longitude: 11.5753822,
@@ -308,7 +425,7 @@ Spot.create!(
 
 Spot.create!(
   bird_id: 4, # Barn Swallow
-  user_id: 5, # Emma
+  user_id: 13, # Emma
   address: "Reichstag Building, Platz der Republik, Berlin",
   latitude: 52.5186232,
   longitude: 13.376198,
@@ -358,7 +475,7 @@ Spot.create!(
 
 Spot.create!(
   bird_id: 10, # Eurasian Magpie
-  user_id: 4, # Maksym
+  user_id: 15, # Maksym
   address: "Sanssouci Palace, Maulbeerallee, Potsdam",
   latitude: 52.4044196,
   longitude: 13.0365741,
@@ -374,7 +491,7 @@ puts "Creating captures 📸"
 
 Capture.create!(
   bird_id: 10, # Eurasian Magpie
-  user_id: 4 # Maksym
+  user_id: 12 # Killian
 )
 
 Capture.create!(
@@ -404,17 +521,17 @@ Capture.create!(
 
 Capture.create!(
   bird_id: 2, # Common Blackbird
-  user_id: 4 # Maksym
+  user_id: 13 # Maksym
 )
 
 Capture.create!(
   bird_id: 2, # Common Blackbird
-  user_id: 4 # Maksym
+  user_id: 16 # Maksym
 )
 
 Capture.create!(
   bird_id: 5, # Eurasian Blue Tit
-  user_id: 3 # Killian
+  user_id: 14 # Killian
 )
 
 Capture.create!(

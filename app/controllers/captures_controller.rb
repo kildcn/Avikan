@@ -118,12 +118,12 @@ class CapturesController < ApplicationController
   end
 
   def reward
-    @total_points = 0
+    # @total_points = 0
     @capture = Capture.find(params[:id])
     @captured_bird = @capture.bird
     @total_points = @captured_bird.rarity.to_i * @captured_bird.experience_points
     @user = current_user
-    @user.user_xp = 0
+    # @user.user_xp = 0
     @current_user_points = @user.user_xp
     added_points = @current_user_points += @total_points
     @user.update(user_xp: added_points)
