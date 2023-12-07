@@ -71,7 +71,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_07_104312) do
     t.text "description"
     t.string "image_url"
     t.string "avatar"
-    t.datetime "date"
   end
 
   create_table "spots", force: :cascade do |t|
