@@ -1,5 +1,4 @@
 <div class="bottom-navbar pb-2">
-
     <%= link_to root_path, class:"navicon" do %>
       <%= image_tag "home.png", class:"navicon" %>
     <% end %>
@@ -8,9 +7,13 @@
       <%= image_tag "camera.png", class:"navicon-2" %>
     <% end %>
 
-    <%= link_to user_badges_path(current_user), class: "navicon" do %>
-  <%= image_tag "person.png", class: "navicon" %>
-<% end %>
-
-
+    <% if user_signed_in? %>
+      <%= link_to user_badges_path(current_user), class: "navicon" do %>
+        <%= image_tag "person.png", class: "navicon" %>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path, class: "navicon" do %>
+        <%= image_tag "person.png", class: "navicon" %>
+      <% end %>
+    <% end %>
 </div>
