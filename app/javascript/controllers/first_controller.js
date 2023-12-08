@@ -7,7 +7,7 @@ export default class extends Controller {
     url: String,
   }
 
-  static targets = ["pigeon", "scan", "owl", "golden"]
+  static targets = ["pigeon", "scan", "owl", "golden", "button"]
 
   connect(){
     console.log(this.captureValue, this.urlValue)
@@ -55,7 +55,7 @@ export default class extends Controller {
 
 
     setTimeout(() => {
-      window.location.replace(this.urlValue + "/" + "captures" + "/" + this.captureValue+"/"+"reward")
+      this.buttonTarget.classList.remove("d-none")
     }, 10500);
 
     //   setTimeout(() => {
