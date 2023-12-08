@@ -12,7 +12,9 @@ class PagesController < ApplicationController
   end
 
   def leaderboard
-    @global_top = User.order(user_xp: :desc).limit(5)
+    # @global_top = User.order(user_xp: :desc).limit(5)
+    @global_top = User.order(user_xp: :desc)
+
   end
 
   def error
