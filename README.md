@@ -1,6 +1,6 @@
 # Avikan - Your Pocket Feather Finder
 
-![Avikan Logo](https://ibb.co/S7fHvZMq)
+![Avikan Logo](https://i.ibb.co/Z12vTbFy/birdpin.png)
 
 Avikan is a gamified bird recognition application that helps users identify, catalog, and track birds they spot in the wild. Leveraging machine learning for bird identification, Avikan turns birdwatching into an engaging adventure with experience points, badges, and a community leaderboard.
 
